@@ -2,8 +2,8 @@ package Model;
 
 import java.sql.SQLException;
 
-public class CamarotePista extends Cliente{
-    public static void create(
+class CamarotePista extends Cliente {
+    protected static void create(
         int rg,
         String nome,
         TipoCliente entrada,
@@ -28,7 +28,7 @@ public class CamarotePista extends Cliente{
         }
     }
 
-    public static void adicionarCreditos(int rg, float credito) throws SQLException {
+    public static void adicionarCredito(int rg, float credito) throws SQLException {
         try {
             execute(
                 "UPDATE `camarote_pista` SET " +

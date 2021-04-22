@@ -3,13 +3,15 @@ package Model;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class Vip extends Cliente{
+public class Pista extends CamarotePista{
     public static void create(
         int rg,
-        String nome
+        String nome,
+        float credito
     ) throws IllegalArgumentException, SQLException {
-        Cliente.create(rg, nome, TipoCliente.VIP);
+        CamarotePista.create(rg, nome, TipoCliente.PISTA, credito);
     }
+
 
     /**
      * Read com ORDER BY
@@ -18,9 +20,9 @@ public class Vip extends Cliente{
      */
     public static ResultSet read(String orderBy) throws SQLException {
         return Conexao.read(
-                "cliente",
-                "`valor_entrada` = " + TipoCliente.VIP.getValorEntrada(),
-                orderBy
+            "cliente INNER JOIN `camarote_pista` ON cliente.rg = camarote_pista.rg",
+            "`valor_entrada` = " + TipoCliente.PISTA.getValorEntrada(),
+            orderBy
         );
     }
     public static ResultSet read() throws SQLException {

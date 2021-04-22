@@ -2,6 +2,7 @@ package Model;
 
 public enum TipoCliente {
     PISTA, CAMAROTE, VIP;
+
     private static final float valorEntrada = 10;
 
     public float getValorEntrada(){

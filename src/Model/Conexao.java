@@ -34,8 +34,13 @@ public class Conexao {
      * @return retorna um ResultSet do que foi encontrado
      */
     protected static ResultSet read(String table, String orderBy) throws SQLException {
+        return read(table, "1", orderBy);
+    }
+
+
+    protected static ResultSet read(String table, String where, String orderBy) throws SQLException {
         ResultSet result = con.prepareStatement(
-            "SELECT * FROM " + table + " ORDER BY " + orderBy
+                "SELECT * FROM " + table + " WHERE " + where + " ORDER BY " + orderBy
         ).executeQuery();
         result.next();
         return result;
