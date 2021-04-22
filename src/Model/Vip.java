@@ -9,7 +9,4 @@ public class Vip extends Cliente{
     ) throws IllegalArgumentException, SQLException {
         Cliente.create(rg, nome, TipoCliente.VIP);
     }
-    public static void delete(int rg) throws SQLException {
-        Cliente.delete(rg);
-    }
 }

@@ -1,5 +1,6 @@
 package Model;
 
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class Cliente extends Conexao {
@@ -30,7 +31,33 @@ public class Cliente extends Conexao {
         }
     }
 
-    protected static void delete(int rg) throws SQLException {
+    /**
+     * Read sem parametros
+     * @return todos os registros de produto na base de dados
+     */
+    public static ResultSet read() throws SQLException {
+        return read("`nome` ASC");
+    }
+
+    /**
+     * Read com ORDER BY
+     * @param orderBy tipo de Ordenação
+     * @return todos os registros ordenados
+     */
+    public static ResultSet read(String orderBy) throws SQLException {
+        return Conexao.read("cliente", orderBy);
+    }
+
+    /**
+     * Read com id
+     * @param id = identificador do produto
+     * @return apenas os campos referentes ao produto vinculado ao id
+     */
+    public static ResultSet read(int id) throws SQLException {
+        return Conexao.read("cliente", id);
+    }
+
+    public static void delete(int rg) throws SQLException {
         try {
             execute("DELETE FROM cliente WHERE rg = '" + rg + "'");
         } catch (SQLException e){

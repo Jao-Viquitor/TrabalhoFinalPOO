@@ -26,6 +26,17 @@ public class CamarotePista extends Cliente{
         } catch (SQLException e){
             throw new SQLException("Poxa, parece que houve um erro ao cadastrar esse Cliente, confira os dados e tente novamente!");
         }
+    }
 
+    public static void adicionarCreditos(int rg, float credito) throws SQLException {
+        try {
+            execute(
+                "UPDATE `camarote_pista` SET " +
+                "`credito` = `credito` + " + credito +" "+
+                "WHERE rg = '" + rg + "'"
+            );
+        }catch (SQLException e){
+            throw new SQLException("RG não encontrado");
+        }
     }
 }

@@ -23,7 +23,6 @@ public class Conexao {
     /**
      * Executa algum comando sql sem retorno
      * @param sql query para a base de dados
-     * @throws SQLException
      */
     protected static void execute(String sql) throws SQLException {
         con.prepareStatement(sql).execute();
@@ -33,11 +32,10 @@ public class Conexao {
      * Read de todas os registros de determinada tabela
      * @param table nome da tabela que eu quero pesquisar
      * @return retorna um ResultSet do que foi encontrado
-     * @throws SQLException
      */
-    protected static ResultSet read(String table) throws SQLException {
+    protected static ResultSet read(String table, String orderBy) throws SQLException {
         ResultSet result = con.prepareStatement(
-            "SELECT * FROM " + table
+            "SELECT * FROM " + table + " ORDER BY " + orderBy
         ).executeQuery();
         result.next();
         return result;
@@ -48,7 +46,6 @@ public class Conexao {
      * @param table nome da tabela que eu quero pesquisar
      * @param id identificador do objeto que eu quero buscar
      * @return retorna um ResultSet de um único objeto que foi encontrado
-     * @throws SQLException
      */
     protected static ResultSet read(String table, int id) throws SQLException {
         PreparedStatement prepare = con.prepareStatement("SELECT * FROM " + table + " WHERE id = " + id);

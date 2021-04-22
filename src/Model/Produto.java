@@ -29,17 +29,24 @@ public class Produto extends Conexao {
     /**
      * Read sem parametros
      * @return todos os registros de produto na base de dados
-     * @throws SQLException
      */
     public static ResultSet read() throws SQLException {
-        return Conexao.read("produto");
+        return read("`titulo` ASC");
+    }
+
+    /**
+     * Read com ORDER BY
+     * @param orderBy tipo de Ordenação
+     * @return todos os registros ordenados
+     */
+    public static ResultSet read(String orderBy) throws SQLException {
+        return Conexao.read("produto", orderBy);
     }
 
     /**
      * Read com id
      * @param id = identificador do produto
      * @return apenas os campos referentes ao produto vinculado ao id
-     * @throws SQLException
      */
     public static ResultSet read(int id) throws SQLException {
         return Conexao.read("produto", id);
@@ -52,17 +59,32 @@ public class Produto extends Conexao {
         float valorVenda,
         int id
     ) throws SQLException {
-        execute(
-            "UPDATE `produto` SET " +
-            "`titulo` = '" + titulo +"', " +
-            "`quantidade` = '" + quantidade +"', " +
-            "`valor_custo` = '" + valorCusto +"', " +
-            "`valor_venda` = '" + valorVenda +"'" +
-            "WHERE id = " + id
-        );
+        try {
+            execute(
+                "UPDATE `produto` SET " +
+                    "`titulo` = '" + titulo +"', " +
+                    "`quantidade` = '" + quantidade + "', " +
+                    "`valor_custo` = '" + valorCusto + "', " +
+                    "`valor_venda` = '" + valorVenda + "' " +
+                    "WHERE id = " + id
+            );
+        } catch (SQLException e){
+            throw new SQLException("Produto não encontrado. ");
+        }
     }
 
     public static void delete(int id) throws SQLException {
         Conexao.delete("produto", id);
+    }
+
+    public static void aumentaEstoque(int id, int quantidade) throws IllegalArgumentException, SQLException {
+        if(quantidade <= 0)
+            throw new IllegalArgumentException("A quantidade precisa ser positiva! ");
+
+        execute(
+            "UPDATE `produto` SET " +
+            "`quantidade` = `quantidade` + " + quantidade + " " +
+            "WHERE id = " + id
+        );
     }
 }
