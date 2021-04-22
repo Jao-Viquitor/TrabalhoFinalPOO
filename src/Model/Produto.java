@@ -26,20 +26,31 @@ public class Produto extends Conexao {
         );
     }
 
+    /**
+     * Read sem parametros
+     * @return todos os registros de produto na base de dados
+     * @throws SQLException
+     */
     public static ResultSet read() throws SQLException {
         return Conexao.read("produto");
     }
 
+    /**
+     * Read com id
+     * @param id = identificador do produto
+     * @return apenas os campos referentes ao produto vinculado ao id
+     * @throws SQLException
+     */
     public static ResultSet read(int id) throws SQLException {
         return Conexao.read("produto", id);
     }
 
     public static void update(
-            String titulo,
-            int quantidade,
-            float valorCusto,
-            float valorVenda,
-            int id
+        String titulo,
+        int quantidade,
+        float valorCusto,
+        float valorVenda,
+        int id
     ) throws SQLException {
         execute(
             "UPDATE `produto` SET " +
