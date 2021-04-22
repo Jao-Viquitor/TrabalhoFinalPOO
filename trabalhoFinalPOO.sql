@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Tempo de geração: 21-Abr-2021 às 21:55
+-- Tempo de geração: 21-Abr-2021 às 22:56
 -- Versão do servidor: 10.3.27-MariaDB-0+deb10u1
 -- versão do PHP: 7.3.27-1~deb10u1
 
@@ -25,15 +25,32 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Estrutura da tabela `camarote_pista`
+--
+
+CREATE TABLE `camarote_pista` (
+  `rg` varchar(250) NOT NULL,
+  `credito` float NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Estrutura da tabela `cliente`
 --
 
 CREATE TABLE `cliente` (
   `rg` varchar(250) NOT NULL,
   `nome` varchar(250) NOT NULL,
-  `entrada` float NOT NULL,
-  `credito` float NOT NULL
+  `valor_entrada` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `cliente`
+--
+
+INSERT INTO `cliente` (`rg`, `nome`, `valor_entrada`) VALUES
+('1234567890', 'Igor', 10);
 
 -- --------------------------------------------------------
 
@@ -72,6 +89,12 @@ INSERT INTO `produto` (`id`, `titulo`, `quantidade`, `valor_custo`, `valor_venda
 --
 
 --
+-- Índices para tabela `camarote_pista`
+--
+ALTER TABLE `camarote_pista`
+  ADD PRIMARY KEY (`rg`);
+
+--
 -- Índices para tabela `cliente`
 --
 ALTER TABLE `cliente`
@@ -103,6 +126,12 @@ ALTER TABLE `produto`
 --
 -- Restrições para despejos de tabelas
 --
+
+--
+-- Limitadores para a tabela `camarote_pista`
+--
+ALTER TABLE `camarote_pista`
+  ADD CONSTRAINT `camarote_pista_ibfk_1` FOREIGN KEY (`rg`) REFERENCES `cliente` (`rg`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Limitadores para a tabela `consumo`
