@@ -50,11 +50,11 @@ public class Cliente extends Conexao {
 
     /**
      * Read com id
-     * @param id = identificador do produto
+     * @param rg = rg do cliente
      * @return apenas os campos referentes ao produto vinculado ao id
      */
-    public static ResultSet read(int id) throws SQLException {
-        return Conexao.read("cliente", id);
+    public static ResultSet read(int rg) throws SQLException {
+        return Conexao.read("cliente", rg);
     }
 
     public static void delete(int rg) throws SQLException {

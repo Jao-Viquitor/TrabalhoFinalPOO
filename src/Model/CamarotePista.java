@@ -9,8 +9,8 @@ class CamarotePista extends Cliente {
         TipoCliente entrada,
         float credito
     ) throws IllegalArgumentException, SQLException {
-        if (entrada.equals(TipoCliente.VIP))
-            throw new IllegalArgumentException("Esse usuário é VIP");
+        if (credito >= 0)
+            throw new IllegalArgumentException("O valor de crédito não pode ser negativo");
 
         try {
             Cliente.create(rg, nome, entrada);
