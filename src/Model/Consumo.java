@@ -40,9 +40,10 @@ public class Consumo extends Conexao {
             throw new SQLException("Poxa, parece que houve um erro ao cadastrar esse consumo, tente novamente. ");
         }
     }
+
     /**
      * Análise de lucro vs custos
-     * @return ResultSet com duas colunas: custo e lucro
+     * @return ResultSet com duas colunas: titulo e quantidade
      * @throws SQLException
      */
     public static ResultSet consumidos() throws SQLException {
