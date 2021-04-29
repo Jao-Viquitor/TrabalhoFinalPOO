@@ -40,4 +40,39 @@ public class Consumo extends Conexao {
             throw new SQLException("Poxa, parece que houve um erro ao cadastrar esse consumo, tente novamente. ");
         }
     }
+    /**
+     * Análise de lucro vs custos
+     * @return ResultSet com duas colunas: custo e lucro
+     * @throws SQLException
+     */
+    public static ResultSet consumidos() throws SQLException {
+        ResultSet result = con.prepareStatement(
+                "SELECT " +
+                    "`titulo`," +
+                    "SUM(`consumo`.`quantidade`) AS `quantidade`" +
+                "FROM" +
+                    "`produto` INNER JOIN `consumo` ON `produto`.`id` = `consumo`.`produto_id`" +
+                "GROUP BY" +
+                    "`produto`.`id`; "
+        ).executeQuery();
+        result.next();
+        return result;
+    }
+
+    /**
+     * Análise de lucro vs custos
+     * @return ResultSet com duas colunas: custo e lucro
+     * @throws SQLException
+     */
+    public static ResultSet analytics() throws SQLException {
+        ResultSet result = con.prepareStatement(
+            "SELECT " +
+                "SUM((`valor_venda` - `valor_custo`) * `consumo`.`quantidade`) AS `lucro`, " +
+                "SUM(`valor_custo`) AS `custo` " +
+            "FROM " +
+                "`produto` INNER JOIN `consumo` ON `produto`.`id` = `consumo`.`produto_id`; "
+        ).executeQuery();
+        result.next();
+        return result;
+    }
 }
