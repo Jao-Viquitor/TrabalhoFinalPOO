@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="300.0" styleClass="background" stylesheets="@Estilo/DarkTheme.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.clientes.AddCredito">
+    <children>
+        <VBox alignment="TOP_CENTER" prefHeight="400.0" prefWidth="300.0">
+            <opaqueInsets>
+                <Insets />
+            </opaqueInsets>
+            <children>
+                <TilePane alignment="CENTER" prefHeight="92.0" prefWidth="300.0">
+                    <children>
+                        <Label alignment="CENTER" text="Adicionar Produto" />
+                    </children>
+                </TilePane>
+                <VBox alignment="TOP_CENTER" prefHeight="242.0" prefWidth="300.0">
+                    <children>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Label text="Código">
+                           <HBox.margin>
+                              <Insets right="25.0" />
+                           </HBox.margin>
+                        </Label>
+                        <Label text="001" />
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin>
+                  </HBox>
+                        <TextField prefHeight="35.0" prefWidth="270.0" promptText="Descrição">
+                            <VBox.margin>
+                                <Insets left="25.0" right="25.0" />
+                            </VBox.margin></TextField>
+                        <TextField editable="false" prefHeight="30.0" prefWidth="270.0" promptText="Quantidade">
+                            <VBox.margin>
+                                <Insets bottom="10.0" left="25.0" right="25.0" top="15.0" />
+                            </VBox.margin>
+                        </TextField>
+                        <TextField editable="false" prefHeight="30.0" prefWidth="270.0" promptText="Preço de Custo">
+                            <VBox.margin>
+                                <Insets bottom="10.0" left="25.0" right="25.0" top="5.0" />
+                            </VBox.margin>
+                        </TextField>
+                        <TextField editable="false" prefHeight="30.0" prefWidth="270.0" promptText="Preço de Venda">
+                            <VBox.margin>
+                                <Insets bottom="15.0" left="25.0" right="25.0" top="5.0" />
+                            </VBox.margin>
+                        </TextField>
+                    </children>
+                    <VBox.margin>
+                        <Insets />
+                    </VBox.margin>
+                </VBox>
+                <HBox alignment="CENTER" prefHeight="106.0" prefWidth="300.0">
+                    <children>
+                        <Button fx:id="cancelar" mnemonicParsing="false" onAction="cancelar" text="Cancelar" textFill="RED">
+                            <HBox.margin>
+                                <Insets right="25.0" />
+                            </HBox.margin>
+                        </Button>
+                        <Button fx:id="confirmar" mnemonicParsing="false" onAction="confirmar" text="Confirmar" />
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>
