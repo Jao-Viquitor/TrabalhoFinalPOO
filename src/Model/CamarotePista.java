@@ -4,7 +4,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-class CamarotePista extends Cliente {
+public class CamarotePista extends Cliente {
     protected static void create(
         int rg,
         String nome,
@@ -29,6 +29,7 @@ class CamarotePista extends Cliente {
             throw new SQLException("Poxa, parece que houve um erro ao cadastrar esse Cliente, confira os dados e tente novamente!");
         }
     }
+
 
     public static ResultSet read(int rg) throws SQLException {
         try {

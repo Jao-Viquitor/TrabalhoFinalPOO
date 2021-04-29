@@ -57,7 +57,7 @@
                         </HBox>
                         <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="775.0">
                             <children>
-                                <Button fx:id="credito" mnemonicParsing="false" text="Adicionar Créditos" />
+                                <Button fx:id="credito" onAction="#adicionarCredito" mnemonicParsing="false" text="Adicionar Créditos" />
                                 <Button fx:id="cConsumo" mnemonicParsing="false" text="Consultar Consumo">
                                     <HBox.margin>
                                         <Insets left="25.0" />

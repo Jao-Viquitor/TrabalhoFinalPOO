@@ -20,15 +20,15 @@
                     <children>
                         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                             <children>
-                                <TextField prefHeight="37.0" prefWidth="145.0" promptText="RG do Cliente">
+                                <TextField prefHeight="37.0" prefWidth="145.0" fx:id="pesquisarRG" promptText="RG do Cliente">
                                     <HBox.margin>
                                         <Insets right="10.0" />
                                     </HBox.margin>
                                 </TextField>
-                                <Button mnemonicParsing="false" text="Pesquisar" />
+                                <Button mnemonicParsing="false" text="Pesquisar" onAction="#pesquisarCliente"/>
                             </children>
                         </HBox>
-                        <TextField editable="false" prefHeight="40.0" prefWidth="270.0" promptText="Nome do Cliente">
+                        <TextField editable="false" prefHeight="40.0" prefWidth="270.0" promptText="Nome do Cliente" fx:id="nomeCliente">
                             <VBox.margin>
                                 <Insets bottom="15.0" left="25.0" right="25.0" top="15.0" />
                             </VBox.margin>
