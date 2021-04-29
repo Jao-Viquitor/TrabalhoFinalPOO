@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Tempo de geração: 21-Abr-2021 às 22:56
+-- Tempo de geração: 29-Abr-2021 às 16:06
 -- Versão do servidor: 10.3.27-MariaDB-0+deb10u1
 -- versão do PHP: 7.3.27-1~deb10u1
 
@@ -33,6 +33,13 @@ CREATE TABLE `camarote_pista` (
   `credito` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Extraindo dados da tabela `camarote_pista`
+--
+
+INSERT INTO `camarote_pista` (`rg`, `credito`) VALUES
+('1234567890', 2);
+
 -- --------------------------------------------------------
 
 --
@@ -42,6 +49,7 @@ CREATE TABLE `camarote_pista` (
 CREATE TABLE `cliente` (
   `rg` varchar(250) NOT NULL,
   `nome` varchar(250) NOT NULL,
+  `tipo_entrada` varchar(250) NOT NULL,
   `valor_entrada` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -49,8 +57,9 @@ CREATE TABLE `cliente` (
 -- Extraindo dados da tabela `cliente`
 --
 
-INSERT INTO `cliente` (`rg`, `nome`, `valor_entrada`) VALUES
-('1234567890', 'Igor', 10);
+INSERT INTO `cliente` (`rg`, `nome`, `tipo_entrada`, `valor_entrada`) VALUES
+('1234567890', 'Igor', 'CAMAROTE', 20),
+('1234567891', 'vip', 'VIP', 20);
 
 -- --------------------------------------------------------
 
@@ -59,9 +68,19 @@ INSERT INTO `cliente` (`rg`, `nome`, `valor_entrada`) VALUES
 --
 
 CREATE TABLE `consumo` (
+  `id` int(11) NOT NULL,
   `cliente_rg` varchar(250) NOT NULL,
-  `produto_id` int(11) NOT NULL
+  `produto_id` int(11) NOT NULL,
+  `quantidade` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `consumo`
+--
+
+INSERT INTO `consumo` (`id`, `cliente_rg`, `produto_id`, `quantidade`) VALUES
+(1, '1234567890', 2, 8),
+(3, '1234567891', 2, 2);
 
 -- --------------------------------------------------------
 
@@ -82,7 +101,7 @@ CREATE TABLE `produto` (
 --
 
 INSERT INTO `produto` (`id`, `titulo`, `quantidade`, `valor_custo`, `valor_venda`) VALUES
-(2, 'coca 250ml', 10, 2.5, 3.5);
+(2, 'coca 250ml', 0, 2.5, 3.5);
 
 --
 -- Índices para tabelas despejadas
@@ -104,6 +123,7 @@ ALTER TABLE `cliente`
 -- Índices para tabela `consumo`
 --
 ALTER TABLE `consumo`
+  ADD PRIMARY KEY (`id`),
   ADD KEY `consumo_ibfk_1` (`cliente_rg`),
   ADD KEY `consumo_ibfk_2` (`produto_id`);
 
@@ -116,6 +136,12 @@ ALTER TABLE `produto`
 --
 -- AUTO_INCREMENT de tabelas despejadas
 --
+
+--
+-- AUTO_INCREMENT de tabela `consumo`
+--
+ALTER TABLE `consumo`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de tabela `produto`
