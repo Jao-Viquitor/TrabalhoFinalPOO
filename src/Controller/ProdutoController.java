@@ -8,25 +8,29 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
+import java.sql.SQLException;
 import java.util.Objects;
 
 
 public class ProdutoController {
     @FXML private Label idProduto;
+    private static boolean openScreen;
     @FXML
-    void initialize(){
+    void initialize() throws SQLException {
         MainController.setListener((newScreen, userData) -> {
 //            if (newScreen.equals("MenuProdutos"))
         });
+        if(openScreen){
+            if(idProduto == null) idProduto = new Label();
+            idProduto.setText(Integer.toString(Produto.nextId()));
+            openScreen = false;
+        }
     }
 
     @FXML void pesquisar() {}
     @FXML
     void cadastrar(){
-        if(idProduto == null) {
-            idProduto = new Label();
-            System.out.println(idProduto.getText());
-        }
+        openScreen = true;
         try {
             Stage stage = new Stage();
             stage.setTitle("Adicionar Produto");
@@ -44,5 +48,6 @@ public class ProdutoController {
     }
 
     @FXML void confirmar() {}
-    @FXML void cancelar() {}
+    @FXML void cancelar() {
+    }
 }
