@@ -8,6 +8,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Objects;
 
@@ -18,12 +19,28 @@ public class ProdutoController {
     @FXML
     void initialize() throws SQLException {
         MainController.setListener((newScreen, userData) -> {
-//            if (newScreen.equals("MenuProdutos"))
+            if (newScreen.equals("MenuProdutos")) mostraTabela();
         });
         if(openScreen){
             if(idProduto == null) idProduto = new Label();
             idProduto.setText(Integer.toString(Produto.nextId()));
             openScreen = false;
+        }
+    }
+
+    void mostraTabela(){
+        try {
+            ResultSet resultSet = Produto.read();
+            while (resultSet.next()){
+                System.out.println(
+                        resultSet.getInt("id") + "\n" +
+                        resultSet.getString("titulo") + "\n" +
+                        resultSet.getFloat("valor_custo") + "\n" +
+                        resultSet.getFloat("valor_venda") + "\n"
+                );
+            }
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
         }
     }
 

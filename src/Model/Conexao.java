@@ -42,7 +42,6 @@ public class Conexao {
         ResultSet result = con.prepareStatement(
                 "SELECT * FROM " + table + " WHERE " + where + " ORDER BY " + orderBy
         ).executeQuery();
-        result.next();
         return result;
     }
 
