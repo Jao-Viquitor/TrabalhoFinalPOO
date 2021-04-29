@@ -49,7 +49,7 @@ public class MainController extends Application {
         notifyAllListeners(screen, userData);
     }
     public static void changeScreen(String screen){ changeScreen(screen, null); }
-    public static void changeScreen(){ changeScreen(""); }
+    public static void changeScreen(){ changeScreen("Principal"); }
 
 
     /**
