@@ -3,7 +3,6 @@ package Controller;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 import java.util.Objects;
@@ -27,16 +26,16 @@ public class PrincipalController extends GeneralController{
     }
     @FXML void adicionarCredito(){
         try {
-            Stage stage = new Stage();
-            stage.setTitle("Adicionar Crédito");
-            stage.setScene(
+            modal = new Stage();
+            modal.setTitle("Adicionar Crédito");
+            modal.setScene(
                 new Scene(
                     FXMLLoader.load(
                         Objects.requireNonNull(getClass().getResource("../View/AddCredito.fxml"))
                     )
                 )
             );
-            stage.show();
+            modal.show();
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }

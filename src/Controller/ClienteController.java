@@ -8,7 +8,7 @@ import javafx.scene.control.TextField;
 
 import java.sql.SQLException;
 
-public class ClienteController {
+public class ClienteController extends GeneralController {
     @FXML private TextField pesquisarRG, nomeCliente;
     @FXML
     private Button pesquisar;
@@ -23,6 +23,9 @@ public class ClienteController {
                     Integer.parseInt(pesquisarRG.getText())
                 ).getString("nome")
             );
+
+        } catch (SQLException | IllegalArgumentException e) {
+            nomeCliente.setText("RG inválido para esta operação");
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
@@ -31,5 +34,4 @@ public class ClienteController {
     @FXML void cadastrar() {}
 
     @FXML void confirmar() {}
-    @FXML void cancelar() {}
 }

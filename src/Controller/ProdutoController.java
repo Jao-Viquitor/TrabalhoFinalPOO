@@ -13,7 +13,7 @@ import java.sql.SQLException;
 import java.util.Objects;
 
 
-public class ProdutoController {
+public class ProdutoController extends GeneralController{
     @FXML private Label idProduto;
     private static boolean openScreen;
     @FXML
@@ -49,22 +49,21 @@ public class ProdutoController {
     void cadastrar(){
         openScreen = true;
         try {
-            Stage stage = new Stage();
-            stage.setTitle("Adicionar Produto");
-            stage.setScene(
+            modal = new Stage();
+            modal.setTitle("Adicionar Produto");
+            modal.setScene(
                 new Scene(
                     FXMLLoader.load(
                         Objects.requireNonNull(getClass().getResource("../View/AddProduto.fxml"))
                     )
                 )
             );
-            stage.show();
+            modal.show();
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
     }
 
     @FXML void confirmar() {}
-    @FXML void cancelar() {
-    }
+
 }
