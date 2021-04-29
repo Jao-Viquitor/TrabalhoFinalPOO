@@ -12,7 +12,7 @@ import java.util.Objects;
 
 
 public class ProdutoController {
-    @FXML private Label idProduto = new Label();
+    @FXML private Label idProduto;
     @FXML
     void initialize(){
         MainController.setListener((newScreen, userData) -> {
@@ -23,6 +23,10 @@ public class ProdutoController {
     @FXML void pesquisar() {}
     @FXML
     void cadastrar(){
+        if(idProduto == null) {
+            idProduto = new Label();
+            System.out.println(idProduto.getText());
+        }
         try {
             Stage stage = new Stage();
             stage.setTitle("Adicionar Produto");
@@ -33,8 +37,6 @@ public class ProdutoController {
                     )
                 )
             );
-
-
             stage.show();
         } catch (Exception e) {
             System.out.println(e.getMessage());

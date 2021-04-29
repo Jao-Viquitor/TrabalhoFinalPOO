@@ -11,7 +11,6 @@ import static javafx.fxml.FXMLLoader.*;
 public class MainController extends Application {
     private static Stage stage;
     private static Scene principal;
-    private static Scene addCliente, addCredito, addProduto;
     private static Scene menuClientes, menuProdutos;
 
     private static final ArrayList<OnChangeScreen> listeners = new ArrayList<>();
@@ -21,14 +20,9 @@ public class MainController extends Application {
     public void start(Stage primaryStage) throws Exception{
         stage = primaryStage;
         primaryStage.setTitle("Trabalho Prático 3 - Final");
-//        primaryStage.setMaximized(true);
 
         principal = new Scene(load(Objects.requireNonNull(getClass().getResource("../View/Principal.fxml"))));
-//
-//        addCliente = new Scene(load(Objects.requireNonNull(getClass().getResource("../View/AddCliente.fxml"))));
-//        addCredito = new Scene(load(Objects.requireNonNull(getClass().getResource("../View/AddCredito.fxml"))));
-//        addProduto = new Scene(load(Objects.requireNonNull(getClass().getResource("../View/AddProduto.fxml"))));
-//
+
         menuClientes = new Scene(load(Objects.requireNonNull(getClass().getResource("../View/MenuClientes.fxml"))));
         menuProdutos = new Scene(load(Objects.requireNonNull(getClass().getResource("../View/MenuProdutos.fxml"))));
 
@@ -47,10 +41,6 @@ public class MainController extends Application {
      */
     public static void changeScreen(String screen, ArrayList<String> userData){
         switch (screen){
-            case "AddCliente": stage.setScene(addCliente); break;
-            case "AddCredito": stage.setScene(addCredito); break;
-            case "AddProduto": stage.setScene(addProduto); break;
-
             case "MenuClientes": stage.setScene(menuClientes); break;
             case "MenuProdutos": stage.setScene(menuProdutos); break;
 
