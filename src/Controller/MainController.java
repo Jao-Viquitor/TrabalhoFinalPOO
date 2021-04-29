@@ -1,15 +1,87 @@
 package Controller;
 
-import Model.*;
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 
-import java.sql.SQLException;
+import java.util.*;
 
-public class MainController {
-    public static void main(String[] args) {
-        try {
-            System.out.println(Vip.read("nome ASC").getString("nome"));
-        } catch (SQLException | IllegalArgumentException e) {
-            System.out.println(e.getMessage());
-        }
+import static javafx.fxml.FXMLLoader.*;
+
+public class MainController extends Application {
+    private static Stage stage;
+    private static Scene principal;
+    private static Scene addCliente, addCredito, addProduto;
+    private static Scene menuClientes, menuProdutos;
+
+    private static final ArrayList<OnChangeScreen> listeners = new ArrayList<>();
+
+    /** Setando telas */
+    @Override
+    public void start(Stage primaryStage) throws Exception{
+        stage = primaryStage;
+        primaryStage.setTitle("Trabalho Prático 3 - Final");
+//        primaryStage.setMaximized(true);
+
+        principal = new Scene(load(Objects.requireNonNull(getClass().getResource("../View/Principal.fxml"))));
+//
+//        addCliente = new Scene(load(Objects.requireNonNull(getClass().getResource("../View/AddCliente.fxml"))));
+//        addCredito = new Scene(load(Objects.requireNonNull(getClass().getResource("../View/AddCredito.fxml"))));
+//        addProduto = new Scene(load(Objects.requireNonNull(getClass().getResource("../View/AddProduto.fxml"))));
+//
+        menuClientes = new Scene(load(Objects.requireNonNull(getClass().getResource("../View/MenuClientes.fxml"))));
+        menuProdutos = new Scene(load(Objects.requireNonNull(getClass().getResource("../View/MenuProdutos.fxml"))));
+
+        changeScreen();
+        primaryStage.show();
     }
+
+    public static void main(String[] args) {
+        launch(args);
+    }
+
+    /**
+     * Controla as trocas de tela
+     * @param screen = passa o "nome" da tela desejada
+     * @param userData = parametro Opcional
+     */
+    public static void changeScreen(String screen, ArrayList<String> userData){
+        switch (screen){
+            case "AddCliente": stage.setScene(addCliente); break;
+            case "AddCredito": stage.setScene(addCredito); break;
+            case "AddProduto": stage.setScene(addProduto); break;
+
+            case "MenuClientes": stage.setScene(menuClientes); break;
+            case "MenuProdutos": stage.setScene(menuProdutos); break;
+
+            default: case "Principal": stage.setScene(principal);
+        }
+        notifyAllListeners(screen, userData);
+    }
+    public static void changeScreen(String screen){ changeScreen(screen, null); }
+    public static void changeScreen(){ changeScreen(""); }
+
+
+    /**
+     * Esta interface obriga todos os controllers a receber a tela atual bem como um parametro
+     */
+    public interface OnChangeScreen{
+        void screenChanged(String newScreen, ArrayList<String> userData);
+    }
+
+    /**
+     * @param newListener é a interface, assim a lista listeners terá todas os locais que a interface foi implementada
+     */
+    public static void setListener(OnChangeScreen newListener){ listeners.add(newListener); }
+
+    /**
+     * Notificará todas os controllers
+     * @param newScreen = tela atual
+     * @param userData = algum objeto, podendo ser nulo ou não
+     */
+    private static void notifyAllListeners(String newScreen, ArrayList<String> userData){
+        for (OnChangeScreen l : listeners)
+            l.screenChanged(newScreen, userData);
+    }
+
 }

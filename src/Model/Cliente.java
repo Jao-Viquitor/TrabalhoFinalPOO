@@ -1,5 +1,6 @@
 package Model;
 
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
@@ -10,19 +11,19 @@ public class Cliente extends Conexao {
         String nome,
         TipoCliente entrada
     ) throws IllegalArgumentException, SQLException {
-        String validRg = Integer.toString(rg);
-        if(validRg.length() != 10) throw new IllegalArgumentException("RG inválido");
+        validarRg(rg);
         float valorEntrada = entrada.getValorEntrada();
-
         try {
             execute(
                 "INSERT INTO `cliente`(" +
                     "`rg`, " +
                     "`nome`, " +
+                    "`tipo_entrada`, " +
                     "`valor_entrada` " +
                 ") VALUES (" +
                     "'" + rg + "', " +
                     "'" + nome + "', " +
+                    "'" + entrada + "', " +
                     "'" + valorEntrada + "' " +
                 ");"
             );
@@ -53,8 +54,12 @@ public class Cliente extends Conexao {
      * @param rg = rg do cliente
      * @return apenas os campos referentes ao produto vinculado ao id
      */
+
     public static ResultSet read(int rg) throws SQLException {
-        return Conexao.read("cliente", rg);
+        PreparedStatement prepare = con.prepareStatement("SELECT * FROM `cliente` WHERE rg = " + rg);
+        ResultSet result = prepare.executeQuery();
+        result.next();
+        return result;
     }
 
     public static void delete(int rg) throws SQLException {
@@ -63,6 +68,11 @@ public class Cliente extends Conexao {
         } catch (SQLException e){
             throw new SQLException("Poxa, houve um erro ao deletar este cliente.");
         }
+    }
+
+    public static void validarRg(int rg) throws IllegalArgumentException{
+        String validRg = Integer.toString(rg);
+        if(validRg.length() != 10) throw new IllegalArgumentException("RG inválido");
     }
 
 }

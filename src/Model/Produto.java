@@ -87,4 +87,23 @@ public class Produto extends Conexao {
             "WHERE id = " + id
         );
     }
+
+    public static void diminuiEstoque(int id, int quantidade) throws IllegalArgumentException, SQLException {
+        if(quantidade <= 0)
+            throw new IllegalArgumentException("A quantidade precisa ser positiva! ");
+
+        execute(
+            "UPDATE `produto` SET " +
+            "`quantidade` = `quantidade` - " + quantidade + " " +
+            "WHERE id = " + id
+        );
+    }
+
+    public static int nextId() throws SQLException {
+        ResultSet resultSet =  con.prepareStatement(
+                "SELECT MAX(`id`) + 1 AS next_id FROM `produto`"
+        ).executeQuery();
+        resultSet.next();
+        return resultSet.getInt("next_id");
+    }
 }

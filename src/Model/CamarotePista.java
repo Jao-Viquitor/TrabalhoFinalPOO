@@ -1,5 +1,7 @@
 package Model;
 
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 class CamarotePista extends Cliente {
@@ -28,6 +30,35 @@ class CamarotePista extends Cliente {
         }
     }
 
+    public static ResultSet read(int rg) throws SQLException {
+        try {
+            PreparedStatement prepare = con.prepareStatement("SELECT * FROM `cliente` INNER JOIN `camarote_pista` ON `cliente`.`rg` = `camarote_pista`.`rg` WHERE `cliente`.`rg` = " + rg);
+            ResultSet result = prepare.executeQuery();
+            result.next();
+            return result;
+        } catch (SQLException e){
+            throw new SQLException("Cliente não é VIP");
+        }
+    }
+    public static float readCredito(int rg) throws SQLException {
+        PreparedStatement prepare = con.prepareStatement("SELECT `credito` FROM `cliente` INNER JOIN `camarote_pista` ON `cliente`.`rg` = `camarote_pista`.`rg` WHERE `cliente`.`rg` = " + rg);
+        ResultSet result = prepare.executeQuery();
+        result.next();
+        return result.getFloat("credito");
+    }
+
+    public static void diminuirCredito(int rg, float credito) throws SQLException {
+        try {
+            execute(
+                "UPDATE `camarote_pista` SET " +
+                    "`credito` = `credito` - " + credito +" "+
+                    "WHERE rg = '" + rg + "'"
+            );
+        }catch (SQLException e){
+            throw new SQLException("RG não encontrado");
+        }
+    }
+
     public static void adicionarCredito(int rg, float credito) throws SQLException {
         try {
             execute(
@@ -39,4 +70,5 @@ class CamarotePista extends Cliente {
             throw new SQLException("RG não encontrado");
         }
     }
+
 }
