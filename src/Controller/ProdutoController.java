@@ -1,53 +1,71 @@
-
 package Controller;
 
 import Model.Produto;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
 import javafx.scene.control.Label;
-import javafx.stage.Stage;
+import javafx.scene.control.TextField;
 
+import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.Objects;
 
 
-public class ProdutoController {
+public class ProdutoController extends GeneralController{
     @FXML private Label idProduto;
-    private static boolean openScreen;
+    @FXML private TextField descricao, quantidade, precoCusto, precoVenda;
+
     @FXML
     void initialize() throws SQLException {
         MainController.setListener((newScreen, userData) -> {
-//            if (newScreen.equals("MenuProdutos"))
+            if (newScreen.equals("MenuProdutos")) mostraTabela();
         });
-        if(openScreen){
+        if(modalScreen){
             if(idProduto == null) idProduto = new Label();
             idProduto.setText(Integer.toString(Produto.nextId()));
-            openScreen = false;
+            modalScreen = false;
+        }
+    }
+
+    void mostraTabela(){
+        try {
+            ResultSet resultSet = Produto.read();
+
+            while (resultSet.next()){
+
+                System.out.println(
+                        resultSet.getInt("id") + "\n" +
+                        resultSet.getString("titulo") + "\n" +
+                        resultSet.getFloat("valor_custo") + "\n" +
+                        resultSet.getFloat("valor_venda") + "\n"
+                );
+            }
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
         }
     }
 
     @FXML void pesquisar() {}
     @FXML
     void cadastrar(){
-        openScreen = true;
+        openModal("AddProduto.fxml");
+    }
+
+    @FXML void confirmar() {
         try {
-            Stage stage = new Stage();
-            stage.setTitle("Adicionar Produto");
-            stage.setScene(
-                new Scene(
-                    FXMLLoader.load(
-                        Objects.requireNonNull(getClass().getResource("../View/AddProduto.fxml"))
-                    )
-                )
+            Produto.create(
+                descricao.getText(),
+                Integer.parseInt(quantidade.getText()),
+                Float.parseFloat(precoCusto.getText()),
+                Float.parseFloat(precoVenda.getText())
             );
-            stage.show();
+            cancelar();
+            atualizarTabela();
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
     }
 
-    @FXML void confirmar() {}
-    @FXML void cancelar() {
+    void atualizarTabela(){
+
     }
+
 }
