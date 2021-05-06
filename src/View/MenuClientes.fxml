@@ -16,6 +16,7 @@
             <children>
                 <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" stylesheets="@Estilo/DarkTheme.css">
                     <children>
+                  <Button mnemonicParsing="false" onAction="#voltar" text="Voltar" />
                         <TextField prefHeight="25" prefWidth="250" promptText="Digite o RG do cliente">
                             <HBox.margin>
                                 <Insets right="25.0" />
