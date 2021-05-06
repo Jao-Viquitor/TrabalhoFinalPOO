@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Tempo de geração: 06-Maio-2021 às 18:46
+-- Tempo de geração: 06-Maio-2021 às 20:36
 -- Versão do servidor: 10.3.27-MariaDB-0+deb10u1
 -- versão do PHP: 7.3.27-1~deb10u1
 
@@ -71,18 +71,19 @@ CREATE TABLE `consumo` (
   `id` int(11) NOT NULL,
   `cliente_rg` varchar(250) NOT NULL,
   `produto_id` int(11) NOT NULL,
-  `quantidade` int(11) NOT NULL
+  `quantidade` int(11) NOT NULL,
+  `pago` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Extraindo dados da tabela `consumo`
 --
 
-INSERT INTO `consumo` (`id`, `cliente_rg`, `produto_id`, `quantidade`) VALUES
-(1, '1234567890', 2, 8),
-(3, '1234567891', 2, 2),
-(4, '1234567890', 4, 1),
-(5, '1234567890', 4, 1);
+INSERT INTO `consumo` (`id`, `cliente_rg`, `produto_id`, `quantidade`, `pago`) VALUES
+(1, '1234567890', 2, 8, 0),
+(3, '1234567891', 2, 2, 0),
+(4, '1234567890', 4, 1, 0),
+(5, '1234567890', 4, 1, 0);
 
 -- --------------------------------------------------------
 
