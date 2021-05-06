@@ -26,12 +26,12 @@
                   <Insets left="25.0" />
                </VBox.margin>
                 </HBox>
-                <TableView>
+                <TableView fx:id="clientes">
                     <columns>
-                        <TableColumn prefWidth="150.0" text="RG" />
-                        <TableColumn prefWidth="250.0" text="Nome" />
-                        <TableColumn prefWidth="150.0" text="Crédito" />
-                        <TableColumn prefWidth="175.0" text="Categoria" />
+                        <TableColumn prefWidth="150.0" text="RG" fx:id="registro"/>
+                        <TableColumn prefWidth="250.0" text="Nome" editable="true" fx:id="nome"/>
+                        <TableColumn prefWidth="150.0" text="Crédito" fx:id="credito"/>
+                        <TableColumn prefWidth="175.0" text="Categoria" fx:id="categoria"/>
                     </columns>
                     <VBox.margin>
                         <Insets left="25.0" right="25.0" />
