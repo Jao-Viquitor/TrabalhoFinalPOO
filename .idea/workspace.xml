@@ -2,14 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1d3c235b-cb76-44cc-8da2-30ab46e97f32" name="Default Changelist" comment="mask">
-      <change afterPath="$PROJECT_DIR$/lib/mysql-connector-java-8.0.23.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TrabalhoFinalPOO/Controller/ClienteController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrabalhoFinalPOO/Controller/ClienteController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TrabalhoFinalPOO/View/AddCliente.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrabalhoFinalPOO/View/AddCliente.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TrabalhoFinalPOO/View/AddCredito.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrabalhoFinalPOO/View/AddCredito.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/ClienteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ClienteController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/ConsumoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ConsumoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/PrincipalController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/PrincipalController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Consumo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Consumo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/AddCliente.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/AddCliente.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/AddCredito.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/AddCredito.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/NovoConsumo.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/NovoConsumo.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/Principal.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/Principal.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,6 +39,11 @@
     <setting file="file://$PROJECT_DIR$/src/Model/CamarotePista.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/Model/Produto.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/Controller/MainController.java" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="ProblemsViewState">
+    <hideBySeverity>
+      <option value="200" />
+    </hideBySeverity>
   </component>
   <component name="ProjectId" id="1rT4oNF4KhFzupFsZ0vqMfyxkXN" />
   <component name="ProjectLevelVcsManager">
@@ -84,17 +88,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.MainController" />
@@ -129,6 +122,8 @@
       <workItem from="1620285843989" duration="588000" />
       <workItem from="1620286491693" duration="1521000" />
       <workItem from="1620288168843" duration="3619000" />
+      <workItem from="1620326540565" duration="2472000" />
+      <workItem from="1620329201481" duration="1209000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1619053001493</created>

@@ -1,10 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.TilePane?>
+<?import javafx.scene.layout.VBox?>
 
-<AnchorPane prefHeight="400.0" prefWidth="300.0" styleClass="background" stylesheets="@Estilo/DarkTheme.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.clientes.AddCredito">
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
+<AnchorPane prefHeight="400.0" prefWidth="300.0" styleClass="background" stylesheets="@Estilo/DarkTheme.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ClienteController">
     <children>
         <VBox alignment="TOP_CENTER" prefHeight="400.0" prefWidth="300.0">
             <opaqueInsets>
@@ -18,22 +26,24 @@
                 </TilePane>
                 <VBox alignment="TOP_CENTER" prefHeight="242.0" prefWidth="300.0">
                     <children>
-                          <TextField prefHeight="37.0" prefWidth="264.0" promptText="RG do Cliente">
+                          <TextField fx:id="RG" onKeyTyped="#filtraRG" prefHeight="37.0" prefWidth="264.0" promptText="RG do Cliente">
                      <VBox.margin>
                         <Insets left="25.0" right="25.0" />
                      </VBox.margin></TextField>
-                        <TextField editable="false" prefHeight="40.0" prefWidth="270.0" promptText="Nome do Cliente">
+                        <TextField fx:id="FILT" editable="true" prefHeight="40.0" prefWidth="270.0" promptText="Nome do Cliente">
                             <VBox.margin>
                                 <Insets bottom="15.0" left="25.0" right="25.0" top="15.0" />
                             </VBox.margin>
                         </TextField>
-                  <MenuButton mnemonicParsing="false" styleClass="menu" stylesheets="@Estilo/DarkTheme.css" text="Categoria Cliente" fx:id="tipoCliente" onAction="tipoCliente">
-                    <items>
-                      <MenuItem mnemonicParsing="false" text="Pista" fx:id="pista" />
-                      <MenuItem mnemonicParsing="false" text="Vip" fx:id="vip"/>
-                      <MenuItem mnemonicParsing="false" styleClass="m" text="Camarote" fx:id="camarote" />
-                    </items>
-                  </MenuButton>
+                        <ChoiceBox fx:id="tipoCliente" prefHeight="40.0" prefWidth="250.0">
+                            <items>
+                                <FXCollections fx:factory="observableArrayList">
+                                    <String fx:value="Pista" />
+                                    <String fx:value="Camarote" />
+                                    <String fx:value="VIP" />
+                                </FXCollections>
+                            </items>
+                        </ChoiceBox>
                     </children>
                <VBox.margin>
                   <Insets />
@@ -41,12 +51,12 @@
                 </VBox>
                 <HBox alignment="CENTER" prefHeight="106.0" prefWidth="300.0">
                     <children>
-                        <Button fx:id="cancelar" mnemonicParsing="false" onAction="cancelar" text="Cancelar" textFill="RED">
+                        <Button fx:id="cancelar" mnemonicParsing="false" onAction="#cancelar" text="Cancelar" textFill="RED">
                             <HBox.margin>
                                 <Insets right="25.0" />
                             </HBox.margin>
                         </Button>
-                        <Button fx:id="confirmar" mnemonicParsing="false" onAction="confirmar" text="Confirmar" />
+                        <Button fx:id="confirmar" mnemonicParsing="false" onAction="#confirmarCadastro" text="Confirmar" />
                     </children>
                 </HBox>
             </children>

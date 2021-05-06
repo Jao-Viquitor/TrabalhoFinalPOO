@@ -1,23 +1,59 @@
 package Controller;
 
+import Model.Camarote;
 import Model.CamarotePista;
+import Model.Pista;
+import Model.Vip;
 import javafx.fxml.FXML;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
 
 import java.sql.SQLException;
 
 public class ClienteController extends GeneralController {
-    @FXML private TextField buscarRG, nomeCliente, valorCredito;
+    @FXML private TextField RG, nomeCliente, valorCredito;
+    @FXML private ChoiceBox tipoCliente;
 
     @FXML void cadastrar() {
         openModal("AddCliente.fxml");
     }
 
-    @FXML void confirmar() {}
+    @FXML void confirmarCadastro() {
+        try {
+            switch (tipoCliente.getSelectionModel().getSelectedItem().toString()){
+                case "VIP": {
+                    System.out.println("vip");
+                    Vip.create(
+                        Integer.parseInt(RG.getText()),
+                        nomeCliente.getText()
+                    );
+                } break;
+                case "Camarote": {
+                    Camarote.create(
+                        Integer.parseInt(RG.getText()),
+                        nomeCliente.getText(),
+                        0F
+                    );
+                } break;
+                default: case "Pista": {
+                    Pista.create(
+                        Integer.parseInt(RG.getText()),
+                        nomeCliente.getText(),
+                        0F
+                    );
+                }
+            }
+        } catch (SQLException | IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+//            System.out.println("Preencha o nome do cliente!");
+        }
+    }
     @FXML void confirmarAddCredito() {
         try {
             CamarotePista.adicionarCredito(
-                Integer.parseInt(buscarRG.getText()),
+                Integer.parseInt(RG.getText()),
                 Float.parseFloat(valorCredito.getText())
             );
             cancelar();
@@ -26,13 +62,19 @@ public class ClienteController extends GeneralController {
         }
     }
 
+    void maskRG(){
+        RG.setText(RG.getText().replaceAll("[^0-9]", ""));
+        RG.positionCaret(RG.getLength());
+    }
+    @FXML void filtraRG(){
+        maskRG();
+    }
     @FXML void buscaRG(){
         try {
-            buscarRG.setText(buscarRG.getText().replaceAll("[^0-9]", ""));
-            buscarRG.positionCaret(buscarRG.getLength());
+            maskRG();
             nomeCliente.setText(
                 CamarotePista.read(
-                    Integer.parseInt(buscarRG.getText())
+                    Integer.parseInt(RG.getText())
                 ).getString("nome")
             );
 

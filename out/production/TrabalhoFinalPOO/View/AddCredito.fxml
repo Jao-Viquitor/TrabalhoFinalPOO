@@ -18,7 +18,7 @@
                 </TilePane>
                 <VBox alignment="TOP_CENTER" prefHeight="242.0" prefWidth="300.0">
                     <children>
-                          <TextField fx:id="buscarRG" onKeyTyped="#buscaRG" prefHeight="37.0" prefWidth="145.0" promptText="RG do Cliente">
+                          <TextField fx:id="RG" onKeyTyped="#buscaRG" prefHeight="37.0" prefWidth="145.0" promptText="RG do Cliente">
                      <VBox.margin>
                         <Insets left="25.0" right="25.0" />
                      </VBox.margin>
