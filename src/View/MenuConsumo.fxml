@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" styleClass="background" stylesheets="@Estilo/DarkTheme.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ConsumoControler">
+    <children>
+        <VBox prefHeight="600.0" prefWidth="800.0">
+            <children>
+                <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" stylesheets="@Estilo/DarkTheme.css">
+                    <children>
+                        <TextField prefHeight="25" prefWidth="250" promptText="Digite o RG do cliente">
+                            <HBox.margin>
+                                <Insets right="25.0" />
+                            </HBox.margin>
+                            <font>
+                                <Font name="Courier New" size="12.0" />
+                            </font>
+                        </TextField>
+                        <Button fx:id="pesquisar" mnemonicParsing="false" onAction="#pesquisar" prefHeight="25" prefWidth="125.0" text="Pesquisar">
+                            <HBox.margin>
+                                <Insets right="25.0" />
+                            </HBox.margin>
+                        </Button>
+                        <Button fx:id="novoConsumo" mnemonicParsing="false" onAction="#cadastrar" prefHeight="25" prefWidth="125.0" text="Novo Consumo" />
+                    </children>
+                </HBox>
+                <TableView>
+                    <columns>
+                        <TableColumn prefWidth="150.0" text="Título" />
+                        <TableColumn prefWidth="250.0" text="Quantidade" />
+                        <TableColumn prefWidth="150.0" text="Preço Unitário" />
+                        <TableColumn prefWidth="175.0" text="Preço Total" />
+                    </columns>
+                    <VBox.margin>
+                        <Insets left="25.0" right="25.0" />
+                    </VBox.margin>
+                </TableView>
+            </children>
+        </VBox>
+    </children>
+</Pane>
