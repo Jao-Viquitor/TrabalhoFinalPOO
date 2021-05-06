@@ -7,7 +7,7 @@ import java.sql.SQLException;
 public class Cliente extends Conexao {
 
     protected static void create(
-        int rg,
+        String rg,
         String nome,
         TipoCliente entrada
     ) throws IllegalArgumentException, SQLException {
@@ -70,9 +70,8 @@ public class Cliente extends Conexao {
         }
     }
 
-    public static void validarRg(int rg) throws IllegalArgumentException{
-        String validRg = Integer.toString(rg);
-        if(validRg.length() != 10) throw new IllegalArgumentException("RG inválido");
+    public static void validarRg(String rg) throws IllegalArgumentException{
+        if(rg.length() != 10) throw new IllegalArgumentException("RG inválido");
     }
 
 }

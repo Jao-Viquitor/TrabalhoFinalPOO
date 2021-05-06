@@ -22,22 +22,21 @@ public class ClienteController extends GeneralController {
         try {
             switch (tipoCliente.getSelectionModel().getSelectedItem().toString()){
                 case "VIP": {
-                    System.out.println("vip");
                     Vip.create(
-                        Integer.parseInt(RG.getText()),
+                        RG.getText(),
                         nomeCliente.getText()
                     );
                 } break;
                 case "Camarote": {
                     Camarote.create(
-                        Integer.parseInt(RG.getText()),
+                        RG.getText(),
                         nomeCliente.getText(),
                         0F
                     );
                 } break;
                 default: case "Pista": {
                     Pista.create(
-                        Integer.parseInt(RG.getText()),
+                        RG.getText(),
                         nomeCliente.getText(),
                         0F
                     );

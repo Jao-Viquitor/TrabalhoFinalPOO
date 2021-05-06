@@ -5,7 +5,7 @@ import java.sql.SQLException;
 
 public class Camarote extends CamarotePista {
     public static void create(
-        int rg,
+        String rg,
         String nome,
         float credito
     ) throws IllegalArgumentException, SQLException {

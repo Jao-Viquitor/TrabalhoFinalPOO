@@ -35,7 +35,7 @@
                                 <Insets bottom="15.0" left="25.0" right="25.0" top="15.0" />
                             </VBox.margin>
                         </TextField>
-                        <ChoiceBox fx:id="tipoCliente" prefHeight="40.0" prefWidth="250.0" style="-fx-text-fill: black">
+                        <ChoiceBox fx:id="tipoCliente" prefHeight="40.0" prefWidth="250.0">
                             <items>
                                 <FXCollections fx:factory="observableArrayList">
                                     <String fx:value="Pista" />

@@ -6,7 +6,7 @@ import java.sql.SQLException;
 
 public class CamarotePista extends Cliente {
     protected static void create(
-        int rg,
+        String rg,
         String nome,
         TipoCliente entrada,
         float credito
@@ -31,7 +31,7 @@ public class CamarotePista extends Cliente {
     }
 
 
-    public static ResultSet read(int rg) throws SQLException {
+    public static ResultSet read(String rg) throws SQLException {
         try {
             PreparedStatement prepare = con.prepareStatement("SELECT * FROM `cliente` INNER JOIN `camarote_pista` ON `cliente`.`rg` = `camarote_pista`.`rg` WHERE `cliente`.`rg` = " + rg);
             ResultSet result = prepare.executeQuery();
@@ -41,14 +41,14 @@ public class CamarotePista extends Cliente {
             throw new SQLException("Cliente não é VIP");
         }
     }
-    public static float readCredito(int rg) throws SQLException {
+    public static float readCredito(String rg) throws SQLException {
         PreparedStatement prepare = con.prepareStatement("SELECT `credito` FROM `cliente` INNER JOIN `camarote_pista` ON `cliente`.`rg` = `camarote_pista`.`rg` WHERE `cliente`.`rg` = " + rg);
         ResultSet result = prepare.executeQuery();
         result.next();
         return result.getFloat("credito");
     }
 
-    public static void diminuirCredito(int rg, float credito) throws SQLException {
+    public static void diminuirCredito(String rg, float credito) throws SQLException {
         try {
             execute(
                 "UPDATE `camarote_pista` SET " +

@@ -5,7 +5,7 @@ import java.sql.SQLException;
 
 public class Consumo extends Conexao {
     public static void create(
-        int rg,
+        String rg,
         int idProduto,
         int quantidadeProduto
     ) throws IllegalArgumentException, SQLException {

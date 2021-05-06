@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1d3c235b-cb76-44cc-8da2-30ab46e97f32" name="Default Changelist" comment="mask">
+    <list default="true" id="1d3c235b-cb76-44cc-8da2-30ab46e97f32" name="Default Changelist" comment="vibes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/TrabalhoFinalPOO/Controller/ClienteController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrabalhoFinalPOO/Controller/ClienteController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/TrabalhoFinalPOO/View/AddCliente.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrabalhoFinalPOO/View/AddCliente.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrabalhoFinalPOO/View/AddCredito.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrabalhoFinalPOO/View/AddCredito.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/ClienteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ClienteController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/AddCliente.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/AddCliente.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/AddCredito.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/AddCredito.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/ConsumoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ConsumoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Camarote.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Camarote.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/CamarotePista.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/CamarotePista.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Cliente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Consumo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Consumo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Pista.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Pista.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Vip.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Vip.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -123,7 +127,7 @@
       <workItem from="1620286491693" duration="1521000" />
       <workItem from="1620288168843" duration="3619000" />
       <workItem from="1620326540565" duration="2472000" />
-      <workItem from="1620329201481" duration="1209000" />
+      <workItem from="1620329201481" duration="2209000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1619053001493</created>
@@ -272,7 +276,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620281645961</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="vibes">
+      <created>1620336916297</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1620336916297</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -309,9 +320,9 @@
     <MESSAGE value="extends GeneralController" />
     <MESSAGE value="new methods Controller" />
     <MESSAGE value="addProduto" />
-    <MESSAGE value="vibes" />
     <MESSAGE value="keyPressed" />
     <MESSAGE value="mask" />
-    <option name="LAST_COMMIT_MESSAGE" value="mask" />
+    <MESSAGE value="vibes" />
+    <option name="LAST_COMMIT_MESSAGE" value="vibes" />
   </component>
 </project>

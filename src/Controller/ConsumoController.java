@@ -29,7 +29,7 @@ public class ConsumoController extends GeneralController {
     @FXML void confirmar() {
         try {
             Consumo.create(
-                Integer.parseInt(buscaRG.getText()),
+                buscaRG.getText(),
                 Integer.parseInt(pesquisarProduto.getText()),
                 Integer.parseInt(quantidade.getText())
             );
