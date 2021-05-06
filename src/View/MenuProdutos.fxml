@@ -1,35 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.Pane?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" styleClass="background" stylesheets="@Estilo/DarkTheme.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ProdutoController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" styleClass="background" stylesheets="@Estilo/DarkTheme.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ProdutoController">
     <children>
         <VBox prefHeight="600.0" prefWidth="800.0">
             <children>
-                <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" stylesheets="@Estilo/DarkTheme.css">
+                <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" stylesheets="@Estilo/DarkTheme.css">
                     <children>
-                  <Button mnemonicParsing="false" onAction="#voltar" text="Voltar" />
+                  <Button fx:id="voltar" mnemonicParsing="false" onAction="#voltar" text="Voltar">
+                     <HBox.margin>
+                        <Insets left="25.0" />
+                     </HBox.margin></Button>
                         <TextField prefHeight="25" prefWidth="250" promptText="Digite o código do Produto">
                             <HBox.margin>
-                                <Insets right="25.0" />
+                                <Insets left="100.0" right="25.0" />
                             </HBox.margin>
                             <font>
                                 <Font name="Courier New" size="12.0" />
                             </font>
                         </TextField>
-                        <Button fx:id="pesquisar" mnemonicParsing="false" onAction="#pesquisar" prefHeight="25" prefWidth="125.0" text="Pesquisar">
-                            <HBox.margin>
-                                <Insets right="25.0" />
-                            </HBox.margin>
-                        </Button>
                         <Button fx:id="cadastrar" mnemonicParsing="false" onAction="#cadastrar" prefHeight="25" prefWidth="125.0" text="Cadastrar" />
                     </children>
                 </HBox>

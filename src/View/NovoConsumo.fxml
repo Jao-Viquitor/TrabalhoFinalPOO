@@ -18,25 +18,16 @@
                 </TilePane>
                 <VBox alignment="TOP_CENTER" prefHeight="242.0" prefWidth="300.0">
                     <children>
-                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
-                     <children>
-                        <Label fx:id="nomeCliente" text="Nome do Cliente" />
-                        <Label fx:id="categoria" text="[Catergoria]">
-                           <HBox.margin>
-                              <Insets left="10.0" />
-                           </HBox.margin>
-                        </Label>
-                     </children></HBox>
-                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
-                            <children>
-                                <TextField fx:id="pesquisarProduto" prefHeight="37.0" prefWidth="145.0" promptText="Código do Produto">
-                                    <HBox.margin>
-                                        <Insets right="10.0" />
-                                    </HBox.margin>
-                                </TextField>
-                                <Button mnemonicParsing="false" onAction="#pesquisarProduto" prefHeight="35.0" prefWidth="99.0" text="Pesquisar" />
-                            </children>
-                        </HBox>
+                  <TextField fx:id="pesquisarCliente" promptText="RG do Cliente">
+                     <VBox.margin>
+                        <Insets bottom="15.0" left="25.0" right="25.0" top="25.0"   />
+                     </VBox.margin>
+                  </TextField>
+                          <TextField fx:id="pesquisarProduto" prefHeight="37.0" prefWidth="241.0" promptText="Código do Produto">
+                     <VBox.margin>
+                        <Insets left="25.0" right="25.0" />
+                     </VBox.margin>
+                          </TextField>
                         <TextField fx:id="nomeProduto" editable="false" prefHeight="40.0" prefWidth="270.0" promptText="Nome do Produto">
                             <VBox.margin>
                                 <Insets bottom="15.0" left="25.0" right="25.0" top="5.0" />
@@ -58,7 +49,7 @@
                   </HBox>
                     </children>
                 </VBox>
-            <Button fx:id="confirmarSair" mnemonicParsing="false" onAction="#confirmarSair" text="Adicionar Mais" />
+            <CheckBox fx:id="continuar" mnemonicParsing="false" text="Continuar adicionando" textFill="WHITE" />
                 <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                     <children>
                         <Button fx:id="cancelar" mnemonicParsing="false" onAction="#cancelar" text="Cancelar" textFill="RED">

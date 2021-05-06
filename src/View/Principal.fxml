@@ -51,17 +51,25 @@
                             </children>
                         </HBox>
                         <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="775.0">
-                            <children>
-                                <Button fx:id="credito" mnemonicParsing="false" onAction="#adicionarCredito" text="Adicionar Créditos" />
-                                <Button fx:id="cConsumo" mnemonicParsing="false" text="Consultar Consumo">
-                                    <HBox.margin>
-                                        <Insets left="25.0" />
-                                    </HBox.margin>
-                                </Button>
-                            </children>
                             <VBox.margin>
-                                <Insets left="100.0" />
+                                <Insets left="25.0" />
                             </VBox.margin>
+                            <Button fx:id="credito" onAction="#adicionarCredito" mnemonicParsing="false" text="Adicionar Créditos" />
+                            <Button fx:id="cConsumo" onAction="#consultarConsumo" mnemonicParsing="false" text="Consultar Consumo">
+                                <HBox.margin>
+                                    <Insets left="25.0" />
+                                </HBox.margin>
+                            </Button>
+                            <Button fx:id="nConsumo" onAction="novoConsumo" mnemonicParsing="false" text="Novo Consumo">
+                                <HBox.margin>
+                                    <Insets left="25.0" />
+                                </HBox.margin>
+                            </Button>
+                     <Button fx:id="pagar" onAction="#pagar" layoutX="346.0" layoutY="30.0" mnemonicParsing="false" text="Pagar Consumo">
+                        <HBox.margin>
+                           <Insets left="25.0" />
+                        </HBox.margin>
+                     </Button>
                         </HBox>
                     </children>
                     <VBox.margin>
