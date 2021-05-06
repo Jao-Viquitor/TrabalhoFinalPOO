@@ -3,6 +3,7 @@ package Controller;
 import Model.Produto;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -10,6 +11,7 @@ import java.sql.SQLException;
 
 public class ProdutoController extends GeneralController{
     @FXML private Label idProduto;
+    @FXML private TextField descricao, quantidade, precoCusto, precoVenda;
 
     @FXML
     void initialize() throws SQLException {
@@ -47,6 +49,23 @@ public class ProdutoController extends GeneralController{
         openModal("AddProduto.fxml");
     }
 
-    @FXML void confirmar() {}
+    @FXML void confirmar() {
+        try {
+            Produto.create(
+                descricao.getText(),
+                Integer.parseInt(quantidade.getText()),
+                Float.parseFloat(precoCusto.getText()),
+                Float.parseFloat(precoVenda.getText())
+            );
+            cancelar();
+            atualizarTabela();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    void atualizarTabela(){
+
+    }
 
 }

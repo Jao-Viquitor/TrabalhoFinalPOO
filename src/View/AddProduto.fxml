@@ -36,21 +36,21 @@
                         <Insets bottom="10.0" />
                      </VBox.margin>
                   </HBox>
-                        <TextField prefHeight="35.0" prefWidth="270.0" promptText="Descrição">
+                        <TextField fx:id="descricao" prefHeight="35.0" prefWidth="270.0" promptText="Descrição">
                             <VBox.margin>
                                 <Insets left="25.0" right="25.0" />
                             </VBox.margin></TextField>
-                        <TextField editable="false" prefHeight="30.0" prefWidth="270.0" promptText="Quantidade">
+                        <TextField fx:id="quantidade" prefHeight="30.0" prefWidth="270.0" promptText="Quantidade">
                             <VBox.margin>
                                 <Insets bottom="10.0" left="25.0" right="25.0" top="15.0" />
                             </VBox.margin>
                         </TextField>
-                        <TextField editable="false" prefHeight="30.0" prefWidth="270.0" promptText="Preço de Custo">
+                        <TextField fx:id="precoCusto" prefHeight="30.0" prefWidth="270.0" promptText="Preço de Custo">
                             <VBox.margin>
                                 <Insets bottom="10.0" left="25.0" right="25.0" top="5.0" />
                             </VBox.margin>
                         </TextField>
-                        <TextField editable="false" prefHeight="30.0" prefWidth="270.0" promptText="Preço de Venda">
+                        <TextField fx:id="precoVenda" prefHeight="30.0" prefWidth="270.0" promptText="Preço de Venda">
                             <VBox.margin>
                                 <Insets bottom="15.0" left="25.0" right="25.0" top="5.0" />
                             </VBox.margin>
