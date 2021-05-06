@@ -40,4 +40,6 @@ public class PrincipalController extends GeneralController{
             System.out.println(e.getMessage());
         }
     }
+    @FXML void consultarConsumo(){}
+    @FXML void novoConsumo(){}
 }
