@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="1d3c235b-cb76-44cc-8da2-30ab46e97f32" name="Default Changelist" comment="mask">
+      <change afterPath="$PROJECT_DIR$/lib/mysql-connector-java-8.0.23.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/ClienteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ClienteController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/ConsumoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ConsumoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/PrincipalController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/PrincipalController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Consumo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Consumo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/AddCredito.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/AddCredito.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/NovoConsumo.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/NovoConsumo.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/Principal.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/Principal.fxml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/Model/CamarotePista.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/Model/Produto.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/Controller/MainController.java" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="ProjectId" id="1rT4oNF4KhFzupFsZ0vqMfyxkXN" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="full.screen.before.presentation.mode" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/mysql-connector-java-8.0.23.jar" />
+    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.proportion" value="0.20837587" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/View" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="MainController" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Controller.MainController" />
+      <module name="TrabalhoFinalPOO" />
+      <option name="VM_PARAMETERS" value="--module-path /opt/javafx-sdk-16 --add-modules javafx.controls,javafx.fxml" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.MainController" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1d3c235b-cb76-44cc-8da2-30ab46e97f32" name="Default Changelist" comment="" />
+      <created>1618986923418</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1618986923418</updated>
+      <workItem from="1618986931573" duration="4184000" />
+      <workItem from="1619052883411" duration="9065000" />
+      <workItem from="1619070518861" duration="2153000" />
+      <workItem from="1619125417180" duration="4843000" />
+      <workItem from="1619150248723" duration="41000" />
+      <workItem from="1619671682855" duration="7149000" />
+      <workItem from="1619679368758" duration="472000" />
+      <workItem from="1619679931949" duration="3041000" />
+      <workItem from="1619684597316" duration="1061000" />
+      <workItem from="1619685717955" duration="3521000" />
+      <workItem from="1619723133558" duration="3365000" />
+      <workItem from="1619727419652" duration="10038000" />
+      <workItem from="1620271788012" duration="9306000" />
+      <workItem from="1620285047722" duration="60000" />
+      <workItem from="1620285153729" duration="32000" />
+      <workItem from="1620285239117" duration="324000" />
+      <workItem from="1620285618183" duration="178000" />
+      <workItem from="1620285843989" duration="588000" />
+      <workItem from="1620286491693" duration="1521000" />
+      <workItem from="1620288168843" duration="3619000" />
+    </task>
+    <task id="LOCAL-00001" summary="Initial commit">
+      <created>1619053001493</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1619053001493</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Comentários dos Models">
+      <created>1619054274652</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1619054274652</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Clientes e variantes, novo banco">
+      <created>1619058026369</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1619058026369</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Otimização de classes e novos métodos">
+      <created>1619066431867</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1619066431867</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Otimização de classes">
+      <created>1619130761777</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1619130761777</updated>
+    </task>
+    <task id="LOCAL-00006" summary="novo sql">
+      <created>1619723296470</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1619723296470</updated>
+    </task>
+    <task id="LOCAL-00007" summary="métodos para Consumo">
+      <created>1619725514269</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1619725514270</updated>
+    </task>
+    <task id="LOCAL-00008" summary="review javadoc">
+      <created>1619725551430</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1619725551430</updated>
+    </task>
+    <task id="LOCAL-00009" summary="produtos add">
+      <created>1619730307183</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1619730307183</updated>
+    </task>
+    <task id="LOCAL-00010" summary="GeneralController">
+      <created>1619732992325</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1619732992325</updated>
+    </task>
+    <task id="LOCAL-00011" summary="changeScreen() Principal">
+      <created>1619733015351</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1619733015351</updated>
+    </task>
+    <task id="LOCAL-00012" summary="adicionar Creditos">
+      <created>1619734967463</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1619734967464</updated>
+    </task>
+    <task id="LOCAL-00013" summary="mostra id em addProduto">
+      <created>1619735628772</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1619735628772</updated>
+    </task>
+    <task id="LOCAL-00014" summary="mostraTabela">
+      <created>1619736215829</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1619736215829</updated>
+    </task>
+    <task id="LOCAL-00015" summary="extends GeneralController">
+      <created>1619739050974</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1619739050974</updated>
+    </task>
+    <task id="LOCAL-00016" summary="new methods Controller">
+      <created>1620272945729</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1620272945729</updated>
+    </task>
+    <task id="LOCAL-00017" summary="addProduto">
+      <created>1620275859484</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1620275859484</updated>
+    </task>
+    <task id="LOCAL-00018" summary="vibes">
+      <created>1620276960821</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1620276960821</updated>
+    </task>
+    <task id="LOCAL-00019" summary="vibes">
+      <created>1620277137035</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1620277137035</updated>
+    </task>
+    <task id="LOCAL-00020" summary="keyPressed">
+      <created>1620278953433</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1620278953434</updated>
+    </task>
+    <task id="LOCAL-00021" summary="mask">
+      <created>1620281645961</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1620281645961</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Initial commit" />
+    <MESSAGE value="Comentários dos Models" />
+    <MESSAGE value="Clientes e variantes, novo banco" />
+    <MESSAGE value="Otimização de classes e novos métodos" />
+    <MESSAGE value="Otimização de classes" />
+    <MESSAGE value="novo sql" />
+    <MESSAGE value="métodos para Consumo" />
+    <MESSAGE value="review javadoc" />
+    <MESSAGE value="produtos add" />
+    <MESSAGE value="GeneralController" />
+    <MESSAGE value="changeScreen() Principal" />
+    <MESSAGE value="adicionar Creditos" />
+    <MESSAGE value="mostra id em addProduto" />
+    <MESSAGE value="mostraTabela" />
+    <MESSAGE value="extends GeneralController" />
+    <MESSAGE value="new methods Controller" />
+    <MESSAGE value="addProduto" />
+    <MESSAGE value="vibes" />
+    <MESSAGE value="keyPressed" />
+    <MESSAGE value="mask" />
+    <option name="LAST_COMMIT_MESSAGE" value="mask" />
+  </component>
+</project>

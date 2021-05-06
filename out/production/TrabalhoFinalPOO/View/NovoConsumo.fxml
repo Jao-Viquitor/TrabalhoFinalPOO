@@ -35,7 +35,7 @@
                         </TextField>
                   <HBox prefHeight="100.0" prefWidth="200.0">
                      <children>
-                              <TextField fx:id="valor" editable="false" onKeyTyped="#maskPreco" prefHeight="37.0" prefWidth="134.0" promptText="R$">
+                              <TextField fx:id="valor" editable="false" prefHeight="37.0" prefWidth="134.0" promptText="R$">
                            <HBox.margin>
                               <Insets left="25.0" />
                            </HBox.margin>

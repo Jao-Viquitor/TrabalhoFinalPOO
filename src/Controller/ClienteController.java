@@ -9,10 +9,6 @@ import java.sql.SQLException;
 public class ClienteController extends GeneralController {
     @FXML private TextField buscarRG, nomeCliente, valorCredito;
 
-    @FXML void pesquisarCliente() {
-
-    }
-    @FXML void pesquisar() {}
     @FXML void cadastrar() {
         openModal("AddCliente.fxml");
     }
@@ -20,12 +16,16 @@ public class ClienteController extends GeneralController {
     @FXML void confirmar() {}
     @FXML void confirmarAddCredito() {
         try {
-            CamarotePista.adicionarCredito(Integer.getInteger(buscarRG.getText()), Float.parseFloat(valorCredito.getText()));
-        } catch (SQLException e) {
+            CamarotePista.adicionarCredito(
+                Integer.parseInt(buscarRG.getText()),
+                Float.parseFloat(valorCredito.getText())
+            );
+            cancelar();
+        } catch (Exception e) {
             System.out.println(e.getMessage());
         }
     }
-    @FXML void tipoCliente() {}
+
     @FXML void buscaRG(){
         try {
             buscarRG.setText(buscarRG.getText().replaceAll("[^0-9]", ""));

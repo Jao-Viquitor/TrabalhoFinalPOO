@@ -19,10 +19,11 @@ public class PrincipalController extends GeneralController{
     @FXML void gerenciarProdutos(){
         MainController.changeScreen("MenuProdutos");
     }
+
     @FXML void adicionarCredito() {
         openModal("AddCredito.fxml");
     }
-    @FXML void consultarConsumo(){}
-    @FXML void pagar(){ MainController.changeScreen("PagarConsumo") }
+    @FXML void consultarConsumo(){ MainController.changeScreen(); }
     @FXML void novoConsumo(){ openModal("NovoConsumo.fxml"); }
+    @FXML void pagarConsumo(){ MainController.changeScreen("PagarConsumo"); }
 }

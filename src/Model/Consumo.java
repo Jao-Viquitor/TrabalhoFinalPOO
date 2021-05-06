@@ -20,7 +20,7 @@ public class Consumo extends Conexao {
 
             if(valorConsumo > CamarotePista.readCredito(rg))
                 throw new IllegalArgumentException("O cliente não possui créditos suficientes para esta demanda");
-            CamarotePista.diminuirCredito(rg, valorConsumo);
+//            CamarotePista.diminuirCredito(rg, valorConsumo);
         }
 
         Produto.diminuiEstoque(idProduto, quantidadeProduto);
