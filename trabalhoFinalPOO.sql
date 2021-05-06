@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Tempo de geração: 29-Abr-2021 às 16:06
+-- Tempo de geração: 06-Maio-2021 às 18:46
 -- Versão do servidor: 10.3.27-MariaDB-0+deb10u1
 -- versão do PHP: 7.3.27-1~deb10u1
 
@@ -38,7 +38,7 @@ CREATE TABLE `camarote_pista` (
 --
 
 INSERT INTO `camarote_pista` (`rg`, `credito`) VALUES
-('1234567890', 2);
+('1234567890', 31);
 
 -- --------------------------------------------------------
 
@@ -80,7 +80,9 @@ CREATE TABLE `consumo` (
 
 INSERT INTO `consumo` (`id`, `cliente_rg`, `produto_id`, `quantidade`) VALUES
 (1, '1234567890', 2, 8),
-(3, '1234567891', 2, 2);
+(3, '1234567891', 2, 2),
+(4, '1234567890', 4, 1),
+(5, '1234567890', 4, 1);
 
 -- --------------------------------------------------------
 
@@ -101,7 +103,9 @@ CREATE TABLE `produto` (
 --
 
 INSERT INTO `produto` (`id`, `titulo`, `quantidade`, `valor_custo`, `valor_venda`) VALUES
-(2, 'coca 250ml', 0, 2.5, 3.5);
+(2, 'coca 250ml', 0, 2.7, 3.5),
+(3, 'coquinha gelada', 10, 10.1, 20),
+(4, 'Vodka', 8, 10, 12);
 
 --
 -- Índices para tabelas despejadas
@@ -141,13 +145,13 @@ ALTER TABLE `produto`
 -- AUTO_INCREMENT de tabela `consumo`
 --
 ALTER TABLE `consumo`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de tabela `produto`
 --
 ALTER TABLE `produto`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Restrições para despejos de tabelas
