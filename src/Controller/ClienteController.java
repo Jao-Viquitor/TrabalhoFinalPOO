@@ -1,18 +1,31 @@
 package Controller;
 
-import Model.Camarote;
-import Model.CamarotePista;
-import Model.Pista;
-import Model.Vip;
+import Model.*;
 import javafx.fxml.FXML;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.sql.SQLException;
 
 public class ClienteController extends GeneralController {
     @FXML private TextField RG, nomeCliente, valorCredito;
     @FXML private ChoiceBox tipoCliente;
+    @FXML private TableView<Cliente> clientes;
+    @FXML private TableColumn<String, Cliente> registro;
+    @FXML private TableColumn<String, Cliente> nome;
+    @FXML private TableColumn<String, Cliente> categoria;
+    @FXML private TableColumn<String, Cliente> credito;
+
+    @FXML
+    void configuraColunas(){
+        registro.setCellValueFactory(new PropertyValueFactory<>("rg"));
+        nome.setCellValueFactory(new PropertyValueFactory<>("nome"));
+        credito.setCellValueFactory(new PropertyValueFactory<>("credito"));
+        categoria.setCellValueFactory(new PropertyValueFactory<>("categoria"));
+    }
 
     @FXML void cadastrar() {
         openModal("AddCliente.fxml");
