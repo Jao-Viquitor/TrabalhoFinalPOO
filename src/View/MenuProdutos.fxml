@@ -16,6 +16,7 @@
             <children>
                 <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" stylesheets="@Estilo/DarkTheme.css">
                     <children>
+                  <Button mnemonicParsing="false" onAction="#voltar" text="Voltar" />
                         <TextField prefHeight="25" prefWidth="250" promptText="Digite o código do Produto">
                             <HBox.margin>
                                 <Insets right="25.0" />
@@ -32,11 +33,11 @@
                         <Button fx:id="cadastrar" mnemonicParsing="false" onAction="#cadastrar" prefHeight="25" prefWidth="125.0" text="Cadastrar" />
                     </children>
                 </HBox>
-                <TableView fixedCellSize="0.0">
+                <TableView fx:id="table" fixedCellSize="0.0">
                     <columns>
-                        <TableColumn prefWidth="150.0" text="ID" />
-                        <TableColumn editable="true" prefWidth="250.0" text="Descrição" />
-                        <TableColumn editable="true" prefWidth="150.0" text="Quantidade" />
+                        <TableColumn fx:id="table_id" prefWidth="150.0" text="ID" />
+                        <TableColumn fx:id="table_titulo" editable="true" prefWidth="250.0" text="Descrição" />
+                        <TableColumn fx:id="table_quantidade" editable="true" prefWidth="150.0" text="Quantidade" />
                         <TableColumn editable="true" prefWidth="175.0" text="Custo" />
                         <TableColumn editable="true" prefWidth="175.0" text="Preço" />
                     </columns>
