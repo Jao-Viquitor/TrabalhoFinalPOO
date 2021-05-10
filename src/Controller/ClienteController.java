@@ -2,29 +2,58 @@ package Controller;
 
 import Model.*;
 import javafx.fxml.FXML;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class ClienteController extends GeneralController {
     @FXML private TextField RG, nomeCliente, valorCredito;
     @FXML private ChoiceBox tipoCliente;
-    @FXML private TableView<Cliente> clientes;
-    @FXML private TableColumn<String, Cliente> registro;
-    @FXML private TableColumn<String, Cliente> nome;
-    @FXML private TableColumn<String, Cliente> categoria;
-    @FXML private TableColumn<String, Cliente> credito;
+    @FXML private TableView<String[]> clientes;
+    @FXML private TableColumn<String, String> registro;
+    @FXML private TableColumn<String, String> nome;
+    @FXML private TableColumn<String, String> categoria;
+    @FXML private TableColumn<String, String> credito;
+
+    @FXML
+    void initialize(){
+        MainController.setListener((newScreen, userData) -> {
+            if (newScreen.equals("MenuClientes")){
+                configuraColunas();
+                atualizarTabela();
+            }
+        });
+    }
+
+    void atualizarTabela(){
+        clientes.getItems().clear();
+        try{
+            ResultSet arrayClientes = Cliente.read();
+            while (arrayClientes.next()){
+                clientes.getItems().add(
+                    new String[]{
+                        arrayClientes.getString("rg"),
+                        arrayClientes.getString("nome"),
+                        arrayClientes.getString("tipo_entrada"),
+                        arrayClientes.getString("tipo_entrada")
+                    }
+                );
+            }
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
 
     @FXML
     void configuraColunas(){
-        registro.setCellValueFactory(new PropertyValueFactory<>("rg"));
-        nome.setCellValueFactory(new PropertyValueFactory<>("nome"));
-        credito.setCellValueFactory(new PropertyValueFactory<>("credito"));
-        categoria.setCellValueFactory(new PropertyValueFactory<>("categoria"));
+        if(registro.getCellFactory() == null){
+            registro.setCellValueFactory(new PropertyValueFactory<>("rg"));
+            nome.setCellValueFactory(new PropertyValueFactory<>("nome"));
+            credito.setCellValueFactory(new PropertyValueFactory<>("credito"));
+            categoria.setCellValueFactory(new PropertyValueFactory<>("categoria"));
+        }
     }
 
     @FXML void cadastrar() {
