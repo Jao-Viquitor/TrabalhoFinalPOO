@@ -5,6 +5,10 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class CamarotePista extends Cliente {
+    public CamarotePista(String rg, String nome, String tipoEntrada) {
+        super(rg, nome, tipoEntrada);
+    }
+
     protected static void create(
         String rg,
         String nome,

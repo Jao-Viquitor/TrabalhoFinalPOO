@@ -6,6 +6,26 @@ import java.sql.SQLException;
 
 public class Cliente extends Conexao {
 
+    private String rg, nome, tipoEntrada;
+
+    public Cliente(String rg, String nome, String tipoEntrada) {
+        this.rg = rg;
+        this.nome = nome;
+        this.tipoEntrada = tipoEntrada;
+    }
+
+    public String getRg() {
+        return rg;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public String getTipoEntrada() {
+        return tipoEntrada;
+    }
+
     protected static void create(
         String rg,
         String nome,

@@ -11,11 +11,11 @@ import java.sql.SQLException;
 public class ClienteController extends GeneralController {
     @FXML private TextField RG, nomeCliente, valorCredito;
     @FXML private ChoiceBox tipoCliente;
-    @FXML private TableView<String[]> clientes;
-    @FXML private TableColumn<String, String> registro;
-    @FXML private TableColumn<String, String> nome;
-    @FXML private TableColumn<String, String> categoria;
-    @FXML private TableColumn<String, String> credito;
+    @FXML private TableView<Cliente> clientes;
+    @FXML private TableColumn<Cliente, String> registro;
+    @FXML private TableColumn<Cliente, String> nome;
+    @FXML private TableColumn<Cliente, String> categoria;
+    @FXML private TableColumn<Cliente, String> credito;
 
     @FXML
     void initialize(){
@@ -32,14 +32,15 @@ public class ClienteController extends GeneralController {
         try{
             ResultSet arrayClientes = Cliente.read();
             while (arrayClientes.next()){
+
                 clientes.getItems().add(
-                    new String[]{
+                    new Cliente(
                         arrayClientes.getString("rg"),
                         arrayClientes.getString("nome"),
-                        arrayClientes.getString("tipo_entrada"),
                         arrayClientes.getString("tipo_entrada")
-                    }
+                    )
                 );
+
             }
         } catch (Exception e) {
             System.out.println(e.getMessage());
@@ -48,12 +49,15 @@ public class ClienteController extends GeneralController {
 
     @FXML
     void configuraColunas(){
-        if(registro.getCellFactory() == null){
+        if(credito.getCellFactory() == null){
             registro.setCellValueFactory(new PropertyValueFactory<>("rg"));
             nome.setCellValueFactory(new PropertyValueFactory<>("nome"));
             credito.setCellValueFactory(new PropertyValueFactory<>("credito"));
             categoria.setCellValueFactory(new PropertyValueFactory<>("categoria"));
         }
+//        clientes.getColumns().add(registro);
+//        clientes.getColumns().add(nome);
+//        clientes.getColumns().add(categoria);
     }
 
     @FXML void cadastrar() {
