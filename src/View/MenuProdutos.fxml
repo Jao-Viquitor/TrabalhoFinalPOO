@@ -26,13 +26,13 @@
                         <Button fx:id="cadastrar" mnemonicParsing="false" onAction="#cadastrar" prefHeight="25" prefWidth="125.0" text="Cadastrar" />
                     </children>
                 </HBox>
-                <TableView fx:id="table" fixedCellSize="0.0">
+                <TableView fx:id="tableProduto" fixedCellSize="0.0">
                     <columns>
                         <TableColumn fx:id="table_id" prefWidth="150.0" text="ID" />
                         <TableColumn fx:id="table_titulo" editable="true" prefWidth="250.0" text="Descrição" />
                         <TableColumn fx:id="table_quantidade" editable="true" prefWidth="150.0" text="Quantidade" />
-                        <TableColumn editable="true" prefWidth="175.0" text="Custo" />
-                        <TableColumn editable="true" prefWidth="175.0" text="Preço" />
+                        <TableColumn fx:id="table_custo" editable="true" prefWidth="175.0" text="Custo" />
+                        <TableColumn fx:id="table_preco" editable="true" prefWidth="175.0" text="Preço" />
                     </columns>
                     <VBox.margin>
                         <Insets left="25.0" right="25.0" />
