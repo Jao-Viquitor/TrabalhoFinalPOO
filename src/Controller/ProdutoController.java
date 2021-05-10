@@ -18,15 +18,16 @@ public class ProdutoController extends GeneralController{
     @FXML private Label idProduto;
     @FXML private TextField descricao, quantidade, precoCusto, precoVenda;
     @FXML private TableView<ResultSet> tableProduto;
-    @FXML private TableColumn<ResultSet, Integer> table_id;
-    @FXML private TableColumn<ResultSet, String> table_titulo;
-    @FXML private TableColumn<ResultSet, Integer> table_quantidade;
-    @FXML private TableColumn<ResultSet, Float> table_custo;
-    @FXML private TableColumn<ResultSet, Float> table_preco;
+    @FXML private TableColumn<Produto, Integer> table_id;
+    @FXML private TableColumn<Produto, String> table_titulo;
+    @FXML private TableColumn<Produto, Integer> table_quantidade;
+    @FXML private TableColumn<Produto, Float> table_custo;
+    @FXML private TableColumn<Produto, Float> table_preco;
     @FXML private ObservableList<ResultSet> listProdutos = FXCollections.observableArrayList();
 
     @FXML
     void initialize() throws SQLException {
+        configuraColunas();
         MainController.setListener((newScreen, userData) -> {
             if (newScreen.equals("MenuProdutos")) mostraTabela();
         });
@@ -38,14 +39,16 @@ public class ProdutoController extends GeneralController{
     }
 
     void mostraTabela(){
-        configuraColunas();
         try {
             ResultSet resultSet = Produto.read();
-            listProdutos.addAll(resultSet);
+            while (resultSet.next()) {
+                listProdutos.add(resultSet);
+                atualizarTabela();
+            }
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
-        atualizarTabela();
+
     }
 
     @FXML void pesquisar() {}
@@ -73,7 +76,6 @@ public class ProdutoController extends GeneralController{
     }
 
     void configuraColunas(){
-        atualizarTabela();
         table_id.setCellValueFactory(new PropertyValueFactory<>("id"));
         table_titulo.setCellValueFactory(new PropertyValueFactory<>("titulo"));
         table_quantidade.setCellValueFactory(new PropertyValueFactory<>("quantidade"));
