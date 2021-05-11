@@ -25,5 +25,5 @@ public class PrincipalController extends GeneralController{
     }
     @FXML void consultarConsumo(){ MainController.changeScreen(); }
     @FXML void novoConsumo(){ openModal("NovoConsumo.fxml"); }
-    @FXML void pagarConsumo(){ MainController.changeScreen("PagarConsumo"); }
+    @FXML void pagarConsumo(){ openModal("PagarConsumo.fxml"); }
 }

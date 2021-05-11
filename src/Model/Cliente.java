@@ -5,33 +5,11 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class Cliente extends Conexao {
-
-    private String rg, nome, tipoEntrada;
-
-    public Cliente(String rg, String nome, String tipoEntrada) {
-        this.rg = rg;
-        this.nome = nome;
-        this.tipoEntrada = tipoEntrada;
-    }
-
-    public String getRg() {
-        return rg;
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public String getTipoEntrada() {
-        return tipoEntrada;
-    }
-
     protected static void create(
         String rg,
         String nome,
         TipoCliente entrada
     ) throws IllegalArgumentException, SQLException {
-        validarRg(rg);
         float valorEntrada = entrada.getValorEntrada();
         try {
             execute(
@@ -48,6 +26,7 @@ public class Cliente extends Conexao {
                 ");"
             );
         } catch (SQLException e){
+            System.out.println(e.getMessage());
             throw new SQLException("Poxa, parece que houve um erro ao cadastrar esse Cliente, confira os dados e tente novamente!");
         }
     }
@@ -57,16 +36,7 @@ public class Cliente extends Conexao {
      * @return todos os registros de produto na base de dados
      */
     public static ResultSet read() throws SQLException {
-        return read("`nome` ASC");
-    }
-
-    /**
-     * Read com ORDER BY
-     * @param orderBy tipo de Ordenação
-     * @return todos os registros ordenados
-     */
-    public static ResultSet read(String orderBy) throws SQLException {
-        return Conexao.read("cliente", orderBy);
+        return Conexao.read("cliente", "`nome` ASC");
     }
 
     /**
@@ -75,7 +45,7 @@ public class Cliente extends Conexao {
      * @return apenas os campos referentes ao produto vinculado ao id
      */
 
-    public static ResultSet read(int rg) throws SQLException {
+    public static ResultSet read(String rg) throws SQLException {
         PreparedStatement prepare = con.prepareStatement("SELECT * FROM `cliente` WHERE rg = " + rg);
         ResultSet result = prepare.executeQuery();
         result.next();
@@ -88,10 +58,6 @@ public class Cliente extends Conexao {
         } catch (SQLException e){
             throw new SQLException("Poxa, houve um erro ao deletar este cliente.");
         }
-    }
-
-    public static void validarRg(String rg) throws IllegalArgumentException{
-        if(rg.length() != 10) throw new IllegalArgumentException("RG inválido");
     }
 
 }

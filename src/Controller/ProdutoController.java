@@ -1,14 +1,8 @@
 package Controller;
 
 import Model.Produto;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
-import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.control.*;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -17,19 +11,14 @@ import java.sql.SQLException;
 public class ProdutoController extends GeneralController{
     @FXML private Label idProduto;
     @FXML private TextField descricao, quantidade, precoCusto, precoVenda;
-    @FXML private TableView<ResultSet> tableProduto;
-    @FXML private TableColumn<Produto, Integer> table_id;
-    @FXML private TableColumn<Produto, String> table_titulo;
-    @FXML private TableColumn<Produto, Integer> table_quantidade;
-    @FXML private TableColumn<Produto, Float> table_custo;
-    @FXML private TableColumn<Produto, Float> table_preco;
-    @FXML private ObservableList<ResultSet> listProdutos = FXCollections.observableArrayList();
+    @FXML private ListView<String> listProdutos;
 
     @FXML
     void initialize() throws SQLException {
-        configuraColunas();
         MainController.setListener((newScreen, userData) -> {
-            if (newScreen.equals("MenuProdutos")) mostraTabela();
+            if (newScreen.equals("MenuProdutos")) {
+                mostraTabela();
+            }
         });
         if(modalScreen){
             if(idProduto == null) idProduto = new Label();
@@ -39,19 +28,22 @@ public class ProdutoController extends GeneralController{
     }
 
     void mostraTabela(){
+        if(listProdutos == null) listProdutos = new ListView<>();
+        listProdutos.getItems().clear();
         try {
-            ResultSet resultSet = Produto.read();
-            while (resultSet.next()) {
-                listProdutos.add(resultSet);
-                atualizarTabela();
+            ResultSet produtos = Produto.read();
+            while (produtos.next()){
+                listProdutos.getItems().add( "#" +
+                    produtos.getString("id") + " - " +
+                    produtos.getString("titulo") + " - (qtd.: " +
+                    produtos.getString("quantidade") + ")"
+                );
             }
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
-
+        listProdutos.refresh();
     }
-
-    @FXML void pesquisar() {}
 
     @FXML
     void cadastrar(){
@@ -66,26 +58,11 @@ public class ProdutoController extends GeneralController{
                 Float.parseFloat(precoCusto.getText()),
                 Float.parseFloat(precoVenda.getText())
             );
-            cancelar();
-            atualizarTabela();
         } catch (Exception e) {
             System.out.println(e.getMessage());
-        } finally {
-            modal.close();
         }
-    }
-
-    void configuraColunas(){
-        table_id.setCellValueFactory(new PropertyValueFactory<>("id"));
-        table_titulo.setCellValueFactory(new PropertyValueFactory<>("titulo"));
-        table_quantidade.setCellValueFactory(new PropertyValueFactory<>("quantidade"));
-        table_custo.setCellValueFactory(new PropertyValueFactory<>("valor_custo"));
-        table_preco.setCellValueFactory(new PropertyValueFactory<>("valor_venda"));
-    }
-
-    void atualizarTabela(){
-        tableProduto.getItems().clear();
-        tableProduto.getItems().setAll(listProdutos);
+        mostraTabela();
+        cancelar();
     }
 
 }

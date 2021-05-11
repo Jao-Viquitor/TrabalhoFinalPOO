@@ -9,7 +9,6 @@ public class Consumo extends Conexao {
         int idProduto,
         int quantidadeProduto
     ) throws IllegalArgumentException, SQLException {
-        Cliente.validarRg(rg);
         ResultSet informacoesProduto = Produto.read(idProduto);
 
         if(quantidadeProduto > informacoesProduto.getInt("quantidade"))
@@ -29,16 +28,31 @@ public class Consumo extends Conexao {
                 "INSERT INTO `consumo`(" +
                     "`cliente_rg`, " +
                     "`produto_id`, " +
-                    "`quantidade` " +
+                    "`quantidade`, " +
+                    "`pago` " +
                 ") VALUES (" +
                     "'" + rg + "', " +
                     "'" + idProduto + "', " +
-                    "'" + quantidadeProduto + "' " +
+                    "'" + quantidadeProduto + "', " +
+                    "0" +
                 ");"
             );
         } catch (SQLException e){
             throw new SQLException("Poxa, parece que houve um erro ao cadastrar esse consumo, tente novamente. ");
         }
+    }
+
+    public static ResultSet consumidosCliente(String rg) throws SQLException {
+        ResultSet result = con.prepareStatement(
+            "SELECT `cliente`.`nome` AS `nome`, SUM(`produto`.`valor_venda`) AS `total` " +
+            "FROM `consumo` " +
+                "INNER JOIN `cliente` ON `cliente`.`rg` = `consumo`.`cliente_rg` " +
+                "INNER JOIN `produto` ON `produto`.`id` = `consumo`.`produto_id` " +
+            "WHERE `pago` = 0 AND `cliente_rg` = '" + rg + "' " +
+            "GROUP BY `cliente_rg`"
+        ).executeQuery();
+        result.next();
+        return result;
     }
 
     /**

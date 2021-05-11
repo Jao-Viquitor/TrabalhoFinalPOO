@@ -3,61 +3,39 @@ package Controller;
 import Model.*;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
-import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class ClienteController extends GeneralController {
     @FXML private TextField RG, nomeCliente, valorCredito;
-    @FXML private ChoiceBox tipoCliente;
-    @FXML private TableView<Cliente> clientes;
-    @FXML private TableColumn<Cliente, String> registro;
-    @FXML private TableColumn<Cliente, String> nome;
-    @FXML private TableColumn<Cliente, String> categoria;
-    @FXML private TableColumn<Cliente, String> credito;
+    @FXML private ChoiceBox<String> tipoCliente;
+    @FXML private ListView<String> listClientes;
 
     @FXML
     void initialize(){
         MainController.setListener((newScreen, userData) -> {
             if (newScreen.equals("MenuClientes")){
-                configuraColunas();
-                atualizarTabela();
+                mostraTabela();
             }
         });
     }
-
-    void atualizarTabela(){
-        clientes.getItems().clear();
-        try{
-            ResultSet arrayClientes = Cliente.read();
-            while (arrayClientes.next()){
-
-                clientes.getItems().add(
-                    new Cliente(
-                        arrayClientes.getString("rg"),
-                        arrayClientes.getString("nome"),
-                        arrayClientes.getString("tipo_entrada")
-                    )
+    void mostraTabela(){
+        if(listClientes == null) listClientes = new ListView<>();
+        listClientes.getItems().clear();
+        try {
+            ResultSet clientes = Cliente.read();
+            while (clientes.next()){
+                listClientes.getItems().add(
+                    clientes.getString("rg") + " - " +
+                    clientes.getString("nome") + " - (" +
+                    clientes.getString("tipo_entrada") + ")"
                 );
-
             }
-        } catch (Exception e) {
+        } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
-    }
 
-    @FXML
-    void configuraColunas(){
-        if(credito.getCellFactory() == null){
-            registro.setCellValueFactory(new PropertyValueFactory<>("rg"));
-            nome.setCellValueFactory(new PropertyValueFactory<>("nome"));
-            credito.setCellValueFactory(new PropertyValueFactory<>("credito"));
-            categoria.setCellValueFactory(new PropertyValueFactory<>("categoria"));
-        }
-//        clientes.getColumns().add(registro);
-//        clientes.getColumns().add(nome);
-//        clientes.getColumns().add(categoria);
     }
 
     @FXML void cadastrar() {
@@ -66,34 +44,21 @@ public class ClienteController extends GeneralController {
 
     @FXML void confirmarCadastro() {
         try {
-            switch (tipoCliente.getSelectionModel().getSelectedItem().toString()){
-                case "VIP": {
-                    Vip.create(
-                        RG.getText(),
-                        nomeCliente.getText()
-                    );
-                } break;
-                case "Camarote": {
-                    Camarote.create(
-                        RG.getText(),
-                        nomeCliente.getText(),
-                        0F
-                    );
-                } break;
-                default: case "Pista": {
-                    Pista.create(
-                        RG.getText(),
-                        nomeCliente.getText(),
-                        0F
-                    );
-                }
+            if(tipoCliente == null) tipoCliente = new ChoiceBox<>();
+            String rg = RG.getText();
+            String nome = nomeCliente.getText();
+            switch (tipoCliente.getSelectionModel().getSelectedItem()){
+                case "VIP": Vip.create(rg, nome); break;
+                case "Camarote": Camarote.create(rg, nome, 0F); break;
+                case "Pista": Pista.create(rg, nome, 0F); break;
             }
         } catch (SQLException | IllegalArgumentException e) {
             System.out.println(e.getMessage());
         } catch (Exception e) {
-            System.out.println(e.getMessage());
-//            System.out.println("Preencha o nome do cliente!");
+            System.out.println("Preencha o nome do cliente!");
         }
+        mostraTabela();
+        cancelar();
     }
     @FXML void confirmarAddCredito() {
         try {
@@ -119,7 +84,7 @@ public class ClienteController extends GeneralController {
             maskRG();
             nomeCliente.setText(
                 CamarotePista.read(
-                    Integer.parseInt(RG.getText())
+                    RG.getText()
                 ).getString("nome")
             );
 

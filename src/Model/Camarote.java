@@ -4,9 +4,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class Camarote extends CamarotePista {
-    public Camarote(String rg, String nome, String tipoEntrada) {
-        super(rg, nome, tipoEntrada);
-    }
 
     public static void create(
         String rg,

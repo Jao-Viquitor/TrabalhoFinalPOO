@@ -4,9 +4,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class Vip extends Cliente{
-    public Vip(String rg, String nome, String tipoEntrada) {
-        super(rg, nome, tipoEntrada);
-    }
 
     public static void create(
         String rg,
