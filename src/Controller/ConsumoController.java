@@ -16,7 +16,7 @@ public class ConsumoController extends GeneralController {
 
     @FXML private TextField buscaRG, nomeCliente, pesquisarProduto, nomeProduto, valor, quantidade;
     @FXML private CheckBox continuar;
-    @FXML private Label total, credito;
+    @FXML private Label total, credito, creditoRestante;
     float valor_produto;
 
 //    @FXML
@@ -34,19 +34,14 @@ public class ConsumoController extends GeneralController {
             ResultSet cliente = Consumo.consumidosCliente(buscaRG.getText());
             nomeCliente.setText(cliente.getString("nome"));
             total.setText("R$ " + cliente.getString("total"));
-            try {
-                ResultSet camarotePista = CamarotePista.read(cliente.getString("rg"));
-                System.out.println("teste" + camarotePista.getString("credito"));
-                credito.setText("R$ " + camarotePista.getString("credito"));
-                credito.setVisible(true);
+            credito.setText("R$ " + cliente.getString("credito"));
+            creditoRestante.setText("R$ " + (cliente.getFloat("credito") - cliente.getFloat("total")));
 
-            } catch (SQLException e){
-                System.out.println(e.getMessage());
-//                credito.setVisible(false);
-            }
         } catch (SQLException e) {
             nomeCliente.setText("RG não encontrado");
             total.setText("R$ 0.0");
+            credito.setText("R$ 0.0");
+            creditoRestante.setText("R$ 0.0");
         }
     }
     @FXML

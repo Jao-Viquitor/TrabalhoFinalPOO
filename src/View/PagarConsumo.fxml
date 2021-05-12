@@ -62,7 +62,7 @@
                            <padding>
                               <Insets right="15.0" />
                            </padding></Label>
-                        <Label fx:id="resto" text="R$300,00">
+                        <Label fx:id="creditoRestante" text="R$300,00">
                            <HBox.margin>
                               <Insets left="25.0" />
                            </HBox.margin>

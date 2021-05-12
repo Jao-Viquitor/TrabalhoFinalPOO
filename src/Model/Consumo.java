@@ -44,9 +44,10 @@ public class Consumo extends Conexao {
 
     public static ResultSet consumidosCliente(String rg) throws SQLException {
         ResultSet result = con.prepareStatement(
-            "SELECT `cliente`.`nome` AS `nome`, SUM(`produto`.`valor_venda`) AS `total` " +
+            "SELECT `cliente`.`nome` AS `nome`, `camarote_pista`.`credito`, SUM(`produto`.`valor_venda`) AS `total` " +
             "FROM `consumo` " +
                 "INNER JOIN `cliente` ON `cliente`.`rg` = `consumo`.`cliente_rg` " +
+                "INNER JOIN `camarote_pista` ON `camarote_pista`.`rg` = `consumo`.`cliente_rg` " +
                 "INNER JOIN `produto` ON `produto`.`id` = `consumo`.`produto_id` " +
             "WHERE `pago` = 0 AND `cliente_rg` = '" + rg + "' " +
             "GROUP BY `cliente_rg`"

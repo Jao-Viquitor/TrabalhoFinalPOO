@@ -4,7 +4,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="300.0" styleClass="background" stylesheets="@Estilo/DarkTheme.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.PagarConsumo">
+<AnchorPane prefHeight="400.0" prefWidth="300.0" styleClass="background" stylesheets="@Estilo/DarkTheme.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ConsumoController">
     <children>
         <VBox alignment="TOP_CENTER" prefHeight="400.0" prefWidth="300.0">
             <opaqueInsets>
@@ -18,7 +18,7 @@
                 </TilePane>
                 <VBox alignment="TOP_CENTER" prefHeight="196.0" prefWidth="300.0">
                     <children>
-                        <TextField prefHeight="37.0" prefWidth="264.0" promptText="RG do Cliente">
+                        <TextField fx:id="buscaRG" onKeyTyped="#procuraConsumoRG" prefHeight="37.0" prefWidth="264.0" promptText="RG do Cliente">
                             <VBox.margin>
                                 <Insets left="25.0" right="25.0" />
                             </VBox.margin></TextField>
@@ -62,7 +62,7 @@
                            <padding>
                               <Insets right="15.0" />
                            </padding></Label>
-                        <Label fx:id="resto" text="R$300,00">
+                        <Label fx:id="creditoRestante" text="R$300,00">
                            <HBox.margin>
                               <Insets left="25.0" />
                            </HBox.margin>
@@ -76,12 +76,12 @@
                 </VBox>
                 <HBox alignment="CENTER" prefHeight="117.0" prefWidth="300.0">
                     <children>
-                        <Button fx:id="cancelar" mnemonicParsing="false" onAction="cancelar" text="Cancelar" textFill="RED">
+                        <Button fx:id="cancelar" mnemonicParsing="false" onAction="#cancelar" text="Cancelar" textFill="RED">
                             <HBox.margin>
                                 <Insets right="25.0" />
                             </HBox.margin>
                         </Button>
-                        <Button fx:id="confirmar" mnemonicParsing="false" onAction="confirmar" text="Confirmar" />
+                        <Button fx:id="confirmar" mnemonicParsing="false" onAction="#confirmarPgConsumo" text="Confirmar" />
                     </children>
                 </HBox>
             </children>
