@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1d3c235b-cb76-44cc-8da2-30ab46e97f32" name="Default Changelist" comment="menu consumo">
+    <list default="true" id="1d3c235b-cb76-44cc-8da2-30ab46e97f32" name="Default Changelist" comment="update 8 and 13">
+      <change afterPath="$PROJECT_DIR$/src/View/ReadProduto.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrabalhoFinalPOO/Controller/ConsumoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrabalhoFinalPOO/Controller/ConsumoController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrabalhoFinalPOO/Controller/MainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrabalhoFinalPOO/Controller/MainController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrabalhoFinalPOO/Model/Consumo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrabalhoFinalPOO/Model/Consumo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/ConsumoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ConsumoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Consumo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Consumo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/MenuConsumo.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/MenuConsumo.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TrabalhoFinalPOO/Controller/ProdutoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrabalhoFinalPOO/Controller/ProdutoController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TrabalhoFinalPOO/View/MenuConsumo.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrabalhoFinalPOO/View/MenuConsumo.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TrabalhoFinalPOO/View/MenuProdutos.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrabalhoFinalPOO/View/MenuProdutos.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/ProdutoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ProdutoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Produto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Produto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/MenuProdutos.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/MenuProdutos.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -144,7 +145,7 @@
       <workItem from="1620743579018" duration="14000" />
       <workItem from="1620794094876" duration="3253000" />
       <workItem from="1620821157707" duration="6682000" />
-      <workItem from="1620832825356" duration="4245000" />
+      <workItem from="1620832825356" duration="6149000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1619053001493</created>
@@ -370,7 +371,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620831627922</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="update 8 and 13">
+      <created>1620837381707</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1620837381707</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -390,7 +398,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Otimização de classes e novos métodos" />
     <MESSAGE value="Otimização de classes" />
     <MESSAGE value="novo sql" />
     <MESSAGE value="métodos para Consumo" />
@@ -415,6 +422,7 @@
     <MESSAGE value="update 14" />
     <MESSAGE value="update 6" />
     <MESSAGE value="menu consumo" />
-    <option name="LAST_COMMIT_MESSAGE" value="menu consumo" />
+    <MESSAGE value="update 8 and 13" />
+    <option name="LAST_COMMIT_MESSAGE" value="update 8 and 13" />
   </component>
 </project>

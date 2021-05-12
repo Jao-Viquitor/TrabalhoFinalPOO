@@ -83,7 +83,7 @@ public class Produto extends Conexao {
 
         execute(
             "UPDATE `produto` SET " +
-            "`quantidade` = `quantidade` + " + quantidade + " " +
+            "`quantidade` = " + quantidade + " " +
             "WHERE id = " + id
         );
     }

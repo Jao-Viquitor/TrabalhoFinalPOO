@@ -10,12 +10,9 @@ import java.sql.SQLException;
 
 public class ProdutoController extends GeneralController{
     @FXML private Label idProduto;
-    @FXML private TextField descricao, quantidade, precoCusto, precoVenda;
+    @FXML private TextField descricao, quantidade, precoCusto, precoVenda, idProdutoFiltro;
     @FXML private ListView<String> listProdutos;
-    @FXML private ListView<String> listTitulo;
-    @FXML private ListView<String> listQuantidade;
-    @FXML private ListView<String> listCusto;
-    @FXML private ListView<String> listVenda;
+    private static int idProdutoRead = 0;
 
     @FXML
     void initialize() throws SQLException {
@@ -25,30 +22,46 @@ public class ProdutoController extends GeneralController{
             }
         });
         if(modalScreen){
-            if(idProduto == null) idProduto = new Label();
-            idProduto.setText(Integer.toString(Produto.nextId()));
+            if(idProdutoRead > 0){
+                insertIntoRead();
+            } else {
+                if(idProduto == null) idProduto = new Label();
+                idProduto.setText(Integer.toString(Produto.nextId()));
+            }
             modalScreen = false;
+        }
+    }
+
+    private void insertIntoRead() {
+        try {
+            ResultSet produto = Produto.read(idProdutoRead);
+            idProduto.setText(produto.getString("id"));
+            descricao.setText(produto.getString("titulo"));
+            quantidade.setText(produto.getString("quantidade"));
+            precoCusto.setText(produto.getString("valor_custo"));
+            precoVenda.setText(produto.getString("valor_venda"));
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
         }
     }
 
     void mostraTabela(){
         if(listProdutos == null) listProdutos = new ListView<>();
-            allClear();
+        listProdutos.getItems().clear();
         try {
             ResultSet produtos = Produto.read();
             while (produtos.next()){
-                listProdutos.getItems().add( "#" +
-                    produtos.getString("id")
+                listProdutos.getItems().add(
+                    "#" + produtos.getString("id") + " - " +
+                    produtos.getString("titulo") + " - qtd.: " +
+                    produtos.getString("quantidade") + " - " +
+                    "Custo: R$" + produtos.getString("valor_custo") + " / " +
+                    "Venda: R$" + produtos.getString("valor_venda")
                 );
-                listTitulo.getItems().add(produtos.getString("titulo"));
-                listQuantidade.getItems().add(produtos.getString("quantidade"));
-                listCusto.getItems().add("R$" + produtos.getString("valor_custo"));
-                listVenda.getItems().add("R$" + produtos.getString("valor_venda"));
             }
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
-        allRefresh();
     }
 
     @FXML
@@ -71,20 +84,42 @@ public class ProdutoController extends GeneralController{
         cancelar();
     }
 
-    void allClear(){
-        listProdutos.getItems().clear();
-        listTitulo.getItems().clear();
-        listQuantidade.getItems().clear();
-        listCusto.getItems().clear();
-        listVenda.getItems().clear();
+    @FXML void maskIdProduto(){
+        idProdutoFiltro.setText(idProdutoFiltro.getText().replaceAll("[^0-9]", ""));
+        idProdutoFiltro.positionCaret(idProdutoFiltro.getLength());
+        if (idProdutoFiltro.getText().isEmpty()) {
+            mostraTabela(); return;
+        }
+        try {
+            ResultSet produto = Produto.read(Integer.parseInt(idProdutoFiltro.getText()));
+            listProdutos.getItems().clear();
+            listProdutos.getItems().add(
+                    "#" + produto.getString("id") + " - " +
+                    produto.getString("titulo") + " - qtd.: " +
+                    produto.getString("quantidade") + " - " +
+                    "Custo: R$" + produto.getString("valor_custo") + " / " +
+                    "Venda: R$" + produto.getString("valor_venda")
+            );
+        } catch (SQLException e) { /* suprime o erro caso nao haja o id*/}
     }
 
-    void allRefresh(){
-        listProdutos.refresh();
-        listTitulo.refresh();
-        listQuantidade.refresh();
-        listCusto.refresh();
-        listVenda.refresh();
+    @FXML void readProduto(){
+        String[] explode = listProdutos.getSelectionModel().getSelectedItem().split(" - ");
+        explode = explode[0].split("#");
+        idProdutoRead = Integer.parseInt(explode[1]);
+        openModal("ReadProduto.fxml");
     }
 
+    @FXML void maskQuantidade(){
+        quantidade.setText(quantidade.getText().replaceAll("[^0-9]", ""));
+        quantidade.positionCaret(quantidade.getLength());
+    }
+    @FXML void alterarQuantidade(){
+        try {
+            Produto.aumentaEstoque(idProdutoRead, Integer.parseInt(quantidade.getText()));
+            cancelar();
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+    }
 }
