@@ -11,7 +11,7 @@ public class CamarotePista extends Cliente {
         TipoCliente entrada,
         float credito
     ) throws IllegalArgumentException, SQLException {
-        if (credito >= 0)
+        if (credito < 0)
             throw new IllegalArgumentException("O valor de crédito não pode ser negativo");
 
         try {

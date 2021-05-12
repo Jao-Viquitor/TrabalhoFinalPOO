@@ -52,6 +52,13 @@ public class Cliente extends Conexao {
         return result;
     }
 
+    public static ResultSet readWithLike(String rg) throws SQLException {
+        PreparedStatement prepare = con.prepareStatement("SELECT * FROM `cliente` WHERE `rg` LIKE \"%" + rg + "%\"");
+        ResultSet result = prepare.executeQuery();
+        result.next();
+        return result;
+    }
+
     public static void delete(int rg) throws SQLException {
         try {
             execute("DELETE FROM cliente WHERE rg = '" + rg + "'");
