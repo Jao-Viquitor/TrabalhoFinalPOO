@@ -21,6 +21,10 @@ public class GeneralController {
         modal = null;
     }
 
+    @FXML void alerta(String alert){
+
+    }
+
     protected void openModal(String nameFXML){
         modalScreen = true;
         try {

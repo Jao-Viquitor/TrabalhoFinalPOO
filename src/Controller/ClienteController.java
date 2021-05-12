@@ -1,11 +1,15 @@
 package Controller;
 
 import Model.*;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ClienteController extends GeneralController {
     @FXML private TextField RG, RGHome, nomeCliente, valorCredito, tipoEntrada;
@@ -54,6 +58,7 @@ public class ClienteController extends GeneralController {
 
     }
     void mostraTabela(ResultSet dados){
+        carregarCategorias();
         if(listClientes == null) listClientes = new ListView<>();
         listClientes.getItems().clear();
         try {
@@ -67,7 +72,20 @@ public class ClienteController extends GeneralController {
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
+    }
 
+    void carregarCategorias(){
+        ObservableList<String> categorias = FXCollections.observableArrayList();
+        if(tipoCliente == null) tipoCliente = new ChoiceBox<>();
+        categorias.add("Todas as categorias");
+        categorias.add("Vip");
+        categorias.add("Camarote");
+        categorias.add("Pista");
+        tipoCliente.setItems(categorias);
+    }
+
+    @FXML void filtraCategoria(){
+        String str = tipoCliente.getSelectionModel().getSelectedItem();
     }
 
     @FXML void cadastrar() {
@@ -152,9 +170,5 @@ public class ClienteController extends GeneralController {
         String[] explode = listClientes.getSelectionModel().getSelectedItem().split(" - ");
         idUpdate = Integer.parseInt(explode[0]);
         openModal("ReadCliente.fxml");
-    }
-
-    @FXML void filtraCategoria(){
-
     }
 }
