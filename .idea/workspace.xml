@@ -11,6 +11,7 @@
       <change beforePath="$PROJECT_DIR$/out/production/TrabalhoFinalPOO/Model/Pista.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrabalhoFinalPOO/Model/Pista.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/TrabalhoFinalPOO/Model/Vip.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrabalhoFinalPOO/Model/Vip.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/ProdutoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ProdutoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/MenuProdutos.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/MenuProdutos.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

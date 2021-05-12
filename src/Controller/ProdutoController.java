@@ -3,6 +3,7 @@ package Controller;
 import Model.Produto;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.TextFieldListCell;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -12,6 +13,10 @@ public class ProdutoController extends GeneralController{
     @FXML private Label idProduto;
     @FXML private TextField descricao, quantidade, precoCusto, precoVenda;
     @FXML private ListView<String> listProdutos;
+    @FXML private ListView<String> listTitulo;
+    @FXML private ListView<String> listQuantidade;
+    @FXML private ListView<String> listCusto;
+    @FXML private ListView<String> listVenda;
 
     @FXML
     void initialize() throws SQLException {
@@ -29,20 +34,24 @@ public class ProdutoController extends GeneralController{
 
     void mostraTabela(){
         if(listProdutos == null) listProdutos = new ListView<>();
-        listProdutos.getItems().clear();
+            allClear();
         try {
             ResultSet produtos = Produto.read();
             while (produtos.next()){
                 listProdutos.getItems().add( "#" +
-                    produtos.getString("id") + " - " +
-                    produtos.getString("titulo") + " - (qtd.: " +
-                    produtos.getString("quantidade") + ")"
+                    produtos.getString("id")
                 );
+                listTitulo.getItems().add(produtos.getString("titulo"));
+                listTitulo.setEditable(true);
+                listTitulo.setCellFactory(TextFieldListCell.forListView());
+                listQuantidade.getItems().add(produtos.getString("quantidade"));
+                listCusto.getItems().add("R$" + produtos.getString("valor_custo"));
+                listVenda.getItems().add("R$" + produtos.getString("valor_venda"));
             }
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
-        listProdutos.refresh();
+        allRefresh();
     }
 
     @FXML
@@ -63,6 +72,24 @@ public class ProdutoController extends GeneralController{
         }
         mostraTabela();
         cancelar();
+    }
+
+
+
+    void allClear(){
+        listProdutos.getItems().clear();
+        listTitulo.getItems().clear();
+        listQuantidade.getItems().clear();
+        listCusto.getItems().clear();
+        listVenda.getItems().clear();
+    }
+
+    void allRefresh(){
+        listProdutos.refresh();
+        listTitulo.refresh();
+        listQuantidade.refresh();
+        listCusto.refresh();
+        listVenda.refresh();
     }
 
 }
