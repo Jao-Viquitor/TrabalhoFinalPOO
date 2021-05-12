@@ -91,4 +91,9 @@ public class Consumo extends Conexao {
         result.next();
         return result;
     }
+
+    public static void pagarConsumo(String rg, Float total) throws SQLException {
+        CamarotePista.diminuirCredito(rg, total);
+        execute("UPDATE `consumo` SET pago = 1 WHERE `cliente_rg` = '" + rg + "'");
+    }
 }
