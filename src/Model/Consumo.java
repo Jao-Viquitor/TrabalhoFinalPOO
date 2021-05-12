@@ -64,14 +64,28 @@ public class Consumo extends Conexao {
     public static ResultSet consumidos() throws SQLException {
         ResultSet result = con.prepareStatement(
                 "SELECT " +
+                    "`produto`.`id` AS `id`," +
                     "`titulo`," +
                     "SUM(`consumo`.`quantidade`) AS `quantidade`" +
                 "FROM" +
                     "`produto` INNER JOIN `consumo` ON `produto`.`id` = `consumo`.`produto_id`" +
-                "GROUP BY" +
-                    "`produto`.`id`; "
+                "GROUP BY `produto`.`id`" +
+                "ORDER BY `produto`.`id` ASC "
         ).executeQuery();
-        result.next();
+        return result;
+    }
+    public static ResultSet consumidos(String rg) throws SQLException {
+        ResultSet result = con.prepareStatement(
+                "SELECT " +
+                    "`produto`.`id`," +
+                    "`titulo`," +
+                    "SUM(`consumo`.`quantidade`) AS `quantidade`," +
+                    "SUM(`produto`.`valor_venda` * `consumo`.`quantidade`) AS `total`" +
+                "FROM" +
+                    "`produto` INNER JOIN `consumo` ON `produto`.`id` = `consumo`.`produto_id`" +
+                "WHERE `cliente_rg` = '" + rg + "' " +
+                "GROUP BY `produto`.`id`; "
+        ).executeQuery();
         return result;
     }
 

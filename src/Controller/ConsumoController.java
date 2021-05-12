@@ -6,6 +6,7 @@ import Model.Produto;
 import javafx.fxml.FXML;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 
 import java.sql.ResultSet;
@@ -16,16 +17,35 @@ public class ConsumoController extends GeneralController {
 
     @FXML private TextField buscaRG, nomeCliente, pesquisarProduto, nomeProduto, valor, quantidade;
     @FXML private CheckBox continuar;
-    @FXML private Label total, credito, creditoRestante;
+    @FXML private Label total, credito, creditoRestante, nomeClienteFiltro, totalFiltro;
+    @FXML private ListView<String> listConsumo;
     float valor_produto;
 
-//    @FXML
-//    void initialize() throws SQLException {
-//
-//        if(modalScreen){
-//
-//        }
-//    }
+    @FXML
+    void initialize() {
+        MainController.setListener((newScreen, userData) -> {
+            if (newScreen.equals("MenuConsumo")){
+                mostraTabela();
+            }
+        });
+    }
+
+    void mostraTabela(){
+        buscaRG.setText("");
+        nomeClienteFiltro.setText("");
+        if(listConsumo == null) listConsumo = new ListView<>();
+        listConsumo.getItems().clear();
+        try {
+            ResultSet consumidos = Consumo.consumidos();
+            while (consumidos.next())
+                listConsumo.getItems().add(
+                    "#" + consumidos.getString("id") + " - " +
+                    consumidos.getString("titulo") + "(" + consumidos.getString("quantidade") + ")"
+                );
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 
     @FXML void procuraConsumoRG(){
         buscaRG();
@@ -136,4 +156,39 @@ public class ConsumoController extends GeneralController {
         valor.setText("R$" + valor_produto * qtd);
     }
 
+    @FXML void filtroRG(){
+        try {
+            buscaRG.setText(buscaRG.getText().replaceAll("[^0-9]", ""));
+            buscaRG.positionCaret(buscaRG.getLength());
+            listConsumo.getItems().clear();
+            if(buscaRG.getText().isEmpty()){
+                nomeClienteFiltro.setText("");
+                mostraTabela(); return;
+            }
+            ResultSet consumidos = Consumo.consumidos(buscaRG.getText());
+            ResultSet cliente = Cliente.read(buscaRG.getText());
+            nomeClienteFiltro.setText(
+                cliente.getString("nome") +
+                " [" +
+                    cliente.getString("tipo_entrada") +
+                    " - R$ " + cliente.getString("valor_entrada") +
+                "]"
+            );
+            float total = 0;
+            while (consumidos.next()) {
+                listConsumo.getItems().add(
+                    consumidos.getString("titulo") + " - qtd.: " + consumidos.getString("quantidade") + " - Valor: R$ " + consumidos.getString("total")
+                );
+                total += consumidos.getFloat("total");
+            }
+
+            total += cliente.getFloat("valor_entrada");
+            if(!cliente.getString("tipo_entrada").equals("VIP")){
+                totalFiltro.setText("Total: R$ " + total);
+            }
+        } catch (SQLException e) {
+            totalFiltro.setText("");
+            nomeClienteFiltro.setText("");
+        }
+    }
 }
