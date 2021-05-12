@@ -13,7 +13,7 @@ import java.util.List;
 
 public class ClienteController extends GeneralController {
     @FXML private TextField RG, RGHome, nomeCliente, valorCredito, tipoEntrada;
-    @FXML private ChoiceBox<String> tipoCliente;
+    @FXML private ComboBox<String> tipoCliente;
     @FXML private ListView<String> listClientes;
     private static int idUpdate;
 
@@ -41,6 +41,7 @@ public class ClienteController extends GeneralController {
         }
     }
     void mostraTabela(){
+        carregarCategorias();
         if(listClientes == null) listClientes = new ListView<>();
         listClientes.getItems().clear();
         try {
@@ -76,7 +77,7 @@ public class ClienteController extends GeneralController {
 
     void carregarCategorias(){
         ObservableList<String> categorias = FXCollections.observableArrayList();
-        if(tipoCliente == null) tipoCliente = new ChoiceBox<>();
+        if(tipoCliente == null) tipoCliente = new ComboBox<>();
         categorias.add("Todas as categorias");
         categorias.add("Vip");
         categorias.add("Camarote");
@@ -94,7 +95,7 @@ public class ClienteController extends GeneralController {
 
     @FXML void confirmarCadastro() {
         try {
-            if(tipoCliente == null) tipoCliente = new ChoiceBox<>();
+            if(tipoCliente == null) tipoCliente = new ComboBox<>();
             String rg = RG.getText();
             String nome = nomeCliente.getText();
             switch (tipoCliente.getSelectionModel().getSelectedItem()){
