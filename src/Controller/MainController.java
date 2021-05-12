@@ -11,7 +11,7 @@ import static javafx.fxml.FXMLLoader.*;
 public class MainController extends Application {
     private static Stage stage;
     private static Scene principal;
-    private static Scene menuClientes, menuProdutos;
+    private static Scene menuClientes, menuProdutos, menuConsumo;
 
     private static final ArrayList<OnChangeScreen> listeners = new ArrayList<>();
 
@@ -25,6 +25,7 @@ public class MainController extends Application {
 
         menuClientes = new Scene(load(Objects.requireNonNull(getClass().getResource("../View/MenuClientes.fxml"))));
         menuProdutos = new Scene(load(Objects.requireNonNull(getClass().getResource("../View/MenuProdutos.fxml"))));
+        menuConsumo = new Scene(load(Objects.requireNonNull(getClass().getResource("../View/MenuConsumo.fxml"))));
 
         changeScreen();
         primaryStage.show();
@@ -43,6 +44,7 @@ public class MainController extends Application {
         switch (screen){
             case "MenuClientes": stage.setScene(menuClientes); break;
             case "MenuProdutos": stage.setScene(menuProdutos); break;
+            case "MenuConsumo": stage.setScene(menuConsumo); break;
 
             default: case "Principal": stage.setScene(principal);
         }
