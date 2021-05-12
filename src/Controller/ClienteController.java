@@ -8,7 +8,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class ClienteController extends GeneralController {
-    @FXML private TextField RG, nomeCliente, valorCredito;
+    @FXML private TextField RG, RGHome, nomeCliente, valorCredito;
     @FXML private ChoiceBox<String> tipoCliente;
     @FXML private ListView<String> listClientes;
 
@@ -30,6 +30,22 @@ public class ClienteController extends GeneralController {
                     clientes.getString("rg") + " - " +
                     clientes.getString("nome") + " - (" +
                     clientes.getString("tipo_entrada") + ")"
+                );
+            }
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+
+    }
+    void mostraTabela(ResultSet dados){
+        if(listClientes == null) listClientes = new ListView<>();
+        listClientes.getItems().clear();
+        try {
+            while (dados.next()){
+                listClientes.getItems().add(
+                    dados.getString("rg") + " - " +
+                    dados.getString("nome") + " - (" +
+                    dados.getString("tipo_entrada") + ")"
                 );
             }
         } catch (SQLException e) {
@@ -91,6 +107,21 @@ public class ClienteController extends GeneralController {
         } catch (SQLException | IllegalArgumentException e) {
             nomeCliente.setText("RG inválido para esta operação");
         } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
+    @FXML void buscaRGHome(){
+        try {
+            RGHome.setText(RGHome.getText().replaceAll("[^0-9]", ""));
+            RGHome.positionCaret(RGHome.getLength());
+            if (RGHome.getText().isEmpty()){
+                mostraTabela();
+            }else {
+                mostraTabela(
+                    Cliente.readWithLike(RGHome.getText())
+                );
+            }
+        } catch (SQLException | IllegalArgumentException e) {
             System.out.println(e.getMessage());
         }
     }

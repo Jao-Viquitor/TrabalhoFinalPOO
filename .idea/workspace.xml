@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1d3c235b-cb76-44cc-8da2-30ab46e97f32" name="Default Changelist" comment="vibes">
+    <list default="true" id="1d3c235b-cb76-44cc-8da2-30ab46e97f32" name="Default Changelist" comment="mask search client">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TrabalhoFinalPOO/Controller/ClienteController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrabalhoFinalPOO/Controller/ClienteController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TrabalhoFinalPOO/Controller/ConsumoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrabalhoFinalPOO/Controller/ConsumoController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TrabalhoFinalPOO/Controller/PrincipalController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrabalhoFinalPOO/Controller/PrincipalController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/TrabalhoFinalPOO/Controller/ProdutoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrabalhoFinalPOO/Controller/ProdutoController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrabalhoFinalPOO/Model/Camarote.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrabalhoFinalPOO/Model/Camarote.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/TrabalhoFinalPOO/Model/CamarotePista.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrabalhoFinalPOO/Model/CamarotePista.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/TrabalhoFinalPOO/Model/Cliente.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrabalhoFinalPOO/Model/Cliente.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/TrabalhoFinalPOO/Model/Consumo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrabalhoFinalPOO/Model/Consumo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrabalhoFinalPOO/Model/Pista.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrabalhoFinalPOO/Model/Pista.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrabalhoFinalPOO/Model/Vip.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrabalhoFinalPOO/Model/Vip.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/ProdutoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ProdutoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/MenuProdutos.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/MenuProdutos.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TrabalhoFinalPOO/View/MenuClientes.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrabalhoFinalPOO/View/MenuClientes.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/ClienteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ClienteController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,7 +29,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GitSEFilterConfiguration">
     <file-type-list>
@@ -39,9 +39,9 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/src/Controller/MainController.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/Model/Produto.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/Model/CamarotePista.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/Model/Produto.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/Controller/MainController.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProblemsViewState">
     <hideBySeverity>
@@ -80,7 +80,7 @@
     <configuration name="MainController" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Controller.MainController" />
       <module name="TrabalhoFinalPOO" />
-      <option name="VM_PARAMETERS" value="--module-path C:\Users\Multiverso\Desktop\openjfx-11.0.2_windows-x64_bin-sdk\javafx-sdk-11.0.2/lib --add-modules javafx.controls,javafx.fxml --add-exports javafx.graphics/com.sun.javafx.sg.prism=ALL-UNNAMED" />
+      <option name="VM_PARAMETERS" value="--module-path /opt/javafx-sdk-16 --add-modules javafx.controls,javafx.fxml --add-exports javafx.graphics/com.sun.javafx.sg.prism=ALL-UNNAMED" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="Controller.*" />
@@ -127,6 +127,12 @@
       <workItem from="1620288168843" duration="3619000" />
       <workItem from="1620326540565" duration="2472000" />
       <workItem from="1620329201481" duration="2209000" />
+      <workItem from="1620650799411" duration="462000" />
+      <workItem from="1620693414701" duration="1145000" />
+      <workItem from="1620726248975" duration="40000" />
+      <workItem from="1620728634693" duration="6239000" />
+      <workItem from="1620743579018" duration="14000" />
+      <workItem from="1620794094876" duration="3253000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1619053001493</created>
@@ -282,14 +288,42 @@
       <option name="project" value="LOCAL" />
       <updated>1620336916297</updated>
     </task>
-    <task id="LOCAL-00023" summary="tentativa das tabelas">
-      <created>1620615996473</created>
+    <task id="LOCAL-00023" summary="vibes and flowers">
+      <created>1620735484824</created>
       <option name="number" value="00023" />
       <option name="presentableId" value="LOCAL-00023" />
       <option name="project" value="LOCAL" />
-      <updated>1620615996473</updated>
+      <updated>1620735484824</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="vibes and flowers">
+      <created>1620794763550</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1620794763550</updated>
+    </task>
+    <task id="LOCAL-00025" summary="vibes and flowers">
+      <created>1620795358720</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1620795358720</updated>
+    </task>
+    <task id="LOCAL-00026" summary="views update">
+      <created>1620795690927</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1620795690927</updated>
+    </task>
+    <task id="LOCAL-00027" summary="mask search client">
+      <created>1620796751098</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1620796751098</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -329,7 +363,10 @@
     <MESSAGE value="keyPressed" />
     <MESSAGE value="mask" />
     <MESSAGE value="vibes" />
-    <MESSAGE value="tentativa das tabelas" />
-    <option name="LAST_COMMIT_MESSAGE" value="tentativa das tabelas" />
+    <MESSAGE value="tentativa na table" />
+    <MESSAGE value="vibes and flowers" />
+    <MESSAGE value="views update" />
+    <MESSAGE value="mask search client" />
+    <option name="LAST_COMMIT_MESSAGE" value="mask search client" />
   </component>
 </project>
