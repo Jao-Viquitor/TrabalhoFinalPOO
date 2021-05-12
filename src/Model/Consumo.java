@@ -83,8 +83,8 @@ public class Consumo extends Conexao {
     public static ResultSet analytics() throws SQLException {
         ResultSet result = con.prepareStatement(
             "SELECT " +
-                "SUM((`valor_venda` - `valor_custo`) * `consumo`.`quantidade`) AS `lucro`, " +
-                "SUM(`valor_custo`) AS `custo` " +
+                "ROUND(SUM((`valor_venda` - `valor_custo`) * `consumo`.`quantidade`), 2) + (SELECT SUM(`valor_entrada`) FROM `cliente`)  AS `lucro`, " +
+                "ROUND(SUM(`valor_custo`), 2) AS `custo` " +
             "FROM " +
                 "`produto` INNER JOIN `consumo` ON `produto`.`id` = `consumo`.`produto_id`; "
         ).executeQuery();

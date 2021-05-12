@@ -1,18 +1,34 @@
 package Controller;
 
+import Model.Consumo;
 import javafx.fxml.FXML;
+import javafx.scene.control.Label;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 public class PrincipalController extends GeneralController{
+    @FXML private Label custoFesta, lucroFesta;
+
     @FXML
     void initialize(){
         MainController.setListener((newScreen, userData) -> {
             if (newScreen.equals("Principal")) {
-                insereTabela();
+                iniciaDados();
             }
         });
     }
 
-    void insereTabela(){}
+    void iniciaDados() {
+        try {
+            ResultSet analytics = Consumo.analytics();
+            custoFesta.setText("Custo: R$ " + analytics.getString("custo"));
+            lucroFesta.setText("Lucro: R$ " + analytics.getString("lucro"));
+        } catch (SQLException e){
+            System.out.println("woops");
+        }
+
+    }
     @FXML void gerenciarClientes(){
         MainController.changeScreen("MenuClientes");
     }
