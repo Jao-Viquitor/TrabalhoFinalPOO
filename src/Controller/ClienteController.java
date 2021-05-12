@@ -89,7 +89,7 @@ public class ClienteController extends GeneralController {
         } catch (Exception e) {
             System.out.println("Preencha o nome do cliente!");
         }
-        mostraTabela();
+        MainController.changeScreen("MenuClientes");
         cancelar();
     }
     @FXML void confirmarAddCredito() {
@@ -98,6 +98,7 @@ public class ClienteController extends GeneralController {
                 Integer.parseInt(RG.getText()),
                 Float.parseFloat(valorCredito.getText())
             );
+            MainController.changeScreen();
             cancelar();
         } catch (Exception e) {
             System.out.println(e.getMessage());
