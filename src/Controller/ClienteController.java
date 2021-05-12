@@ -8,9 +8,10 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class ClienteController extends GeneralController {
-    @FXML private TextField RG, RGHome, nomeCliente, valorCredito;
+    @FXML private TextField RG, RGHome, nomeCliente, valorCredito, tipoEntrada;
     @FXML private ChoiceBox<String> tipoCliente;
     @FXML private ListView<String> listClientes;
+    private static int idUpdate;
 
     @FXML
     void initialize(){
@@ -19,6 +20,21 @@ public class ClienteController extends GeneralController {
                 mostraTabela();
             }
         });
+        if(modalScreen){
+            setReadCliente();
+//            idUpdate = 0;
+            modalScreen = false;
+        }
+    }
+    void setReadCliente(){
+        try {
+            ResultSet dados = Cliente.read(Integer.toString(idUpdate));
+            RG.setText(dados.getString("rg"));
+            nomeCliente.setText(dados.getString("nome"));
+            tipoEntrada.setText(dados.getString("tipo_entrada"));
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
     }
     void mostraTabela(){
         if(listClientes == null) listClientes = new ListView<>();
@@ -129,5 +145,11 @@ public class ClienteController extends GeneralController {
         valorCredito.setText(valorCredito.getText().replaceAll(",", "."));
         valorCredito.setText(valorCredito.getText().replaceAll("[^0-9.]", ""));
         valorCredito.positionCaret(valorCredito.getLength());
+    }
+
+    @FXML void updatemodal(){
+        String[] explode = listClientes.getSelectionModel().getSelectedItem().split(" - ");
+        idUpdate = Integer.parseInt(explode[0]);
+        openModal("ReadCliente.fxml");
     }
 }

@@ -3,7 +3,6 @@ package Controller;
 import Model.Produto;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
-import javafx.scene.control.cell.TextFieldListCell;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;

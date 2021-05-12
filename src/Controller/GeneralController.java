@@ -25,7 +25,7 @@ public class GeneralController {
         modalScreen = true;
         try {
             modal = new Stage();
-            modal.setTitle("Adicionar Produto");
+            modal.setTitle("Modal");
             modal.setScene(
                 new Scene(
                     FXMLLoader.load(

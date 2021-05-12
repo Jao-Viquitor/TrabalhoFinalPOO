@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.TilePane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="400.0" prefWidth="300.0" styleClass="background" stylesheets="@Estilo/DarkTheme.css"
+            xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="Controller.ClienteController">
+    <VBox alignment="TOP_CENTER" prefHeight="400.0" prefWidth="300.0">
+        <opaqueInsets>
+            <Insets/>
+        </opaqueInsets>
+        <TilePane alignment="CENTER" prefHeight="92.0" prefWidth="300.0">
+            <Label alignment="CENTER" text="Adicionar Cliente"/>
+        </TilePane>
+        <VBox alignment="TOP_CENTER" prefHeight="242.0" prefWidth="300.0">
+            <VBox.margin>
+                <Insets/>
+            </VBox.margin>
+            <TextField fx:id="RG" editable="false" onKeyTyped="#filtraRG" prefHeight="37.0" prefWidth="264.0"
+                       promptText="RG do Cliente">
+                <VBox.margin>
+                    <Insets left="25.0" right="25.0"/>
+                </VBox.margin>
+            </TextField>
+            <TextField fx:id="nomeCliente" editable="false" prefHeight="40.0" prefWidth="270.0"
+                       promptText="Nome do Cliente">
+                <VBox.margin>
+                    <Insets bottom="15.0" left="25.0" right="25.0" top="15.0"/>
+                </VBox.margin>
+            </TextField>
+
+            <TextField fx:id="tipoEntrada" editable="false" prefHeight="40.0" prefWidth="270.0"
+                       promptText="Nome do Cliente">
+                <VBox.margin>
+                    <Insets bottom="15.0" left="25.0" right="25.0" top="15.0"/>
+                </VBox.margin>
+            </TextField>
+            
+        </VBox>
+        <HBox alignment="CENTER" prefHeight="106.0" prefWidth="300.0">
+            <Button fx:id="cancelar" mnemonicParsing="false" onAction="#cancelar" text="Cancelar"
+                    textFill="RED">
+                <HBox.margin>
+                    <Insets right="25.0"/>
+                </HBox.margin>
+            </Button>
+        </HBox>
+    </VBox>
+</AnchorPane>

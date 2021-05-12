@@ -46,7 +46,7 @@ public class Cliente extends Conexao {
      */
 
     public static ResultSet read(String rg) throws SQLException {
-        PreparedStatement prepare = con.prepareStatement("SELECT * FROM `cliente` WHERE rg = " + rg);
+        PreparedStatement prepare = con.prepareStatement("SELECT * FROM `cliente` WHERE rg = '" + rg + "'");
         ResultSet result = prepare.executeQuery();
         result.next();
         return result;
@@ -55,7 +55,6 @@ public class Cliente extends Conexao {
     public static ResultSet readWithLike(String rg) throws SQLException {
         PreparedStatement prepare = con.prepareStatement("SELECT * FROM `cliente` WHERE `rg` LIKE \"%" + rg + "%\"");
         ResultSet result = prepare.executeQuery();
-        result.next();
         return result;
     }
 
