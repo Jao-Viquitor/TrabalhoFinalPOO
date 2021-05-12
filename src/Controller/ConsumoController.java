@@ -1,11 +1,13 @@
 package Controller;
 
 import Model.CamarotePista;
+import Model.Cliente;
 import Model.Consumo;
 import Model.Produto;
 import javafx.fxml.FXML;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 
 import java.sql.ResultSet;
@@ -17,15 +19,9 @@ public class ConsumoController extends GeneralController {
     @FXML private TextField buscaRG, nomeCliente, pesquisarProduto, nomeProduto, valor, quantidade;
     @FXML private CheckBox continuar;
     @FXML private Label total, credito, creditoRestante;
+    @FXML private ListView<String> listConsumo;
     float valor_produto;
 
-//    @FXML
-//    void initialize() throws SQLException {
-//
-//        if(modalScreen){
-//
-//        }
-//    }
 
     @FXML void procuraConsumoRG(){
         buscaRG();
@@ -74,6 +70,24 @@ public class ConsumoController extends GeneralController {
         } catch (Exception e){
             System.out.println(e.getMessage());
         }
+    }
+
+    void mostraTabela(){
+        if(listConsumo == null) listConsumo = new ListView<>();
+        listConsumo.getItems().clear();
+        try {
+            ResultSet clientes = Cliente.read();
+            while (clientes.next()){
+                listConsumo.getItems().add(
+                        clientes.getString("rg") + " - " +
+                                clientes.getString("nome") + " - (" +
+                                clientes.getString("tipo_entrada") + ")"
+                );
+            }
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+
     }
 
     @FXML void maskQuantidade() {

@@ -16,12 +16,12 @@
                 <Insets />
             </opaqueInsets>
             <children>
-                <TilePane alignment="CENTER" prefHeight="92.0" prefWidth="300.0">
+                <TilePane alignment="CENTER" prefHeight="90.0" prefWidth="300.0">
                     <children>
                         <Label alignment="CENTER" text="Adicionar Produto" />
                     </children>
                 </TilePane>
-                <VBox alignment="TOP_CENTER" prefHeight="242.0" prefWidth="300.0">
+                <VBox alignment="TOP_CENTER" prefHeight="240.0" prefWidth="300.0">
                     <children>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                      <children>

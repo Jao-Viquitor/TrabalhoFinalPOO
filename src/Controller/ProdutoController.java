@@ -42,8 +42,6 @@ public class ProdutoController extends GeneralController{
                     produtos.getString("id")
                 );
                 listTitulo.getItems().add(produtos.getString("titulo"));
-                listTitulo.setEditable(true);
-                listTitulo.setCellFactory(TextFieldListCell.forListView());
                 listQuantidade.getItems().add(produtos.getString("quantidade"));
                 listCusto.getItems().add("R$" + produtos.getString("valor_custo"));
                 listVenda.getItems().add("R$" + produtos.getString("valor_venda"));
@@ -73,8 +71,6 @@ public class ProdutoController extends GeneralController{
         mostraTabela();
         cancelar();
     }
-
-
 
     void allClear(){
         listProdutos.getItems().clear();

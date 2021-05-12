@@ -3,15 +3,19 @@
   <component name="ChangeListManager">
     <list default="true" id="1d3c235b-cb76-44cc-8da2-30ab46e97f32" name="Default Changelist" comment="vibes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrabalhoFinalPOO/Controller/ProdutoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrabalhoFinalPOO/Controller/ProdutoController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrabalhoFinalPOO/Model/Camarote.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrabalhoFinalPOO/Model/Camarote.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrabalhoFinalPOO/Model/CamarotePista.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrabalhoFinalPOO/Model/CamarotePista.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrabalhoFinalPOO/Model/Cliente.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrabalhoFinalPOO/Model/Cliente.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TrabalhoFinalPOO/Controller/ClienteController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrabalhoFinalPOO/Controller/ClienteController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TrabalhoFinalPOO/Controller/ConsumoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrabalhoFinalPOO/Controller/ConsumoController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TrabalhoFinalPOO/Controller/PrincipalController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrabalhoFinalPOO/Controller/PrincipalController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/TrabalhoFinalPOO/Model/Consumo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrabalhoFinalPOO/Model/Consumo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrabalhoFinalPOO/Model/Pista.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrabalhoFinalPOO/Model/Pista.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrabalhoFinalPOO/Model/Vip.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrabalhoFinalPOO/Model/Vip.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TrabalhoFinalPOO/View/MenuProdutos.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrabalhoFinalPOO/View/MenuProdutos.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/ConsumoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ConsumoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/PrincipalController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/PrincipalController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/ProdutoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ProdutoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/AddProduto.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/AddProduto.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/MenuClientes.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/MenuClientes.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/MenuConsumo.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/MenuConsumo.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/MenuProdutos.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/MenuProdutos.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/NovoConsumo.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/NovoConsumo.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -289,7 +293,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620615996473</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="vibes">
+      <created>1620794430574</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1620794430574</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -328,8 +339,8 @@
     <MESSAGE value="addProduto" />
     <MESSAGE value="keyPressed" />
     <MESSAGE value="mask" />
-    <MESSAGE value="vibes" />
     <MESSAGE value="tentativa das tabelas" />
-    <option name="LAST_COMMIT_MESSAGE" value="tentativa das tabelas" />
+    <MESSAGE value="vibes" />
+    <option name="LAST_COMMIT_MESSAGE" value="vibes" />
   </component>
 </project>
