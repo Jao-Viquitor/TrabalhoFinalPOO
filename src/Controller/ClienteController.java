@@ -152,4 +152,8 @@ public class ClienteController extends GeneralController {
         idUpdate = Integer.parseInt(explode[0]);
         openModal("ReadCliente.fxml");
     }
+
+    @FXML void filtraCategoria(){
+
+    }
 }
