@@ -36,7 +36,7 @@
                            <padding>
                               <Insets right="15.0" />
                            </padding></Label>
-                        <Label fx:id="credito" text="R$100,00">
+                        <Label fx:id="credito" text="R$ 0.0">
                            <HBox.margin>
                               <Insets left="25.0" />
                            </HBox.margin>
@@ -49,7 +49,7 @@
                            <padding>
                               <Insets right="20.0" />
                            </padding></Label>
-                        <Label fx:id="total" text="R$200,00">
+                        <Label fx:id="total" text="R$ 0.0">
                            <HBox.margin>
                               <Insets left="17.0" />
                            </HBox.margin>
@@ -62,7 +62,7 @@
                            <padding>
                               <Insets right="15.0" />
                            </padding></Label>
-                        <Label fx:id="creditoRestante" text="R$300,00">
+                        <Label fx:id="creditoRestante" text="R$ 0.0">
                            <HBox.margin>
                               <Insets left="25.0" />
                            </HBox.margin>
