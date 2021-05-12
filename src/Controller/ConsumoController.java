@@ -103,7 +103,13 @@ public class ConsumoController extends GeneralController {
     }
 
     @FXML void confirmarPgConsumo(){
-
+        try {
+            String[] split = total.getText().split(" ");
+            Consumo.pagarConsumo(buscaRG.getText(), Float.parseFloat(split[1]));
+            cancelar();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML void buscaIdProduto() {

@@ -12,7 +12,7 @@
                 <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" stylesheets="@Estilo/DarkTheme.css">
                     <children>
                   <Button fx:id="voltar" mnemonicParsing="false" onAction="#voltar" text="Voltar" />
-                        <TextField prefHeight="25" prefWidth="250" promptText="Digite o RG do cliente">
+                        <TextField fx:id="RGHome" onKeyTyped="#buscaRGHome" prefHeight="25" prefWidth="250" promptText="Digite o RG do cliente">
                             <HBox.margin>
                                 <Insets left="100.0" right="25.0" />
                             </HBox.margin>
