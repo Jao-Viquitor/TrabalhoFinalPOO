@@ -23,7 +23,7 @@ public class PrincipalController extends GeneralController{
     @FXML void adicionarCredito() {
         openModal("AddCredito.fxml");
     }
-    @FXML void consultarConsumo(){ MainController.changeScreen(); }
+    @FXML void consultarConsumo(){ openModal("MenuConsumo.fxml"); }
     @FXML void novoConsumo(){ openModal("NovoConsumo.fxml"); }
     @FXML void pagarConsumo(){ openModal("PagarConsumo.fxml"); }
 }
