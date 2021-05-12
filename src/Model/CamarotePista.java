@@ -33,7 +33,6 @@ public class CamarotePista extends Cliente {
 
     public static ResultSet read(String rg) throws SQLException {
         try {
-            System.out.println("SELECT * FROM `cliente` INNER JOIN `camarote_pista` ON `cliente`.`rg` = `camarote_pista`.`rg` WHERE `camarote_pista`.`rg` = " + rg);
             PreparedStatement prepare = con.prepareStatement("SELECT * FROM `cliente` INNER JOIN `camarote_pista` ON `cliente`.`rg` = `camarote_pista`.`rg` WHERE `camarote_pista`.`rg` = " + rg);
             ResultSet result = prepare.executeQuery();
             result.next();

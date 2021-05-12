@@ -31,7 +31,7 @@ public class Produto extends Conexao {
      * @return todos os registros de produto na base de dados
      */
     public static ResultSet read() throws SQLException {
-        return read("`titulo` ASC");
+        return read("`id` ASC");
     }
 
     /**

@@ -1,6 +1,6 @@
 package Controller;
 
-import Model.CamarotePista;
+import Model.Cliente;
 import Model.Consumo;
 import Model.Produto;
 import javafx.fxml.FXML;
@@ -49,9 +49,14 @@ public class ConsumoController extends GeneralController {
         try {
             buscaRG.setText(buscaRG.getText().replaceAll("[^0-9]", ""));
             buscaRG.positionCaret(buscaRG.getLength());
+            nomeCliente.setText(
+                Cliente.read(
+                    buscaRG.getText()
+                ).getString("nome")
+            );
 
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+            nomeCliente.setText("RG inválido para esta operação");
         }
     }
 
