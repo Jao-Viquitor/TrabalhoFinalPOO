@@ -1,20 +1,15 @@
 package Controller;
 
 import Model.*;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
 
 public class ClienteController extends GeneralController {
-    private ObservableList<String> categorias = FXCollections.observableArrayList("Todas as categorias", "Vip", "Camarote", "Pista");
     @FXML private TextField RG, RGHome, nomeCliente, valorCredito, tipoEntrada;
-    @FXML private ComboBox<String> tipoCliente = new ComboBox<>(categorias);
+    @FXML private ComboBox<String> tipoCliente;
     @FXML private ListView<String> listClientes;
     private static int idUpdate;
 
@@ -42,6 +37,13 @@ public class ClienteController extends GeneralController {
         }
     }
     void mostraTabela(){
+        if(tipoCliente == null){
+            tipoCliente = new ComboBox<>();
+            tipoCliente.getItems().add("Todos clientes");
+            tipoCliente.getItems().add("Clientes VIP");
+            tipoCliente.getItems().add("Clientes Camarote");
+            tipoCliente.getItems().add("Clientes Pista");
+        }
         if(listClientes == null) listClientes = new ListView<>();
         listClientes.getItems().clear();
         try {
@@ -76,7 +78,24 @@ public class ClienteController extends GeneralController {
     }
 
     @FXML void filtraCategoria(){
-        String str = tipoCliente.getSelectionModel().getSelectedItem();
+        try {
+            ResultSet retorno;
+            switch (tipoCliente.getSelectionModel().getSelectedItem()){
+                case "Clientes VIP": retorno = Vip.read(); break;
+                case "Clientes Camarote": retorno = Camarote.read(); break;
+                case "Clientes Pista": retorno = Pista.read(); break;
+                default: retorno = Cliente.read();
+            }
+            while (retorno.next()){
+                listClientes.getItems().add(
+                    retorno.getString("rg") + " - " +
+                    retorno.getString("nome") + " - (" +
+                    retorno.getString("tipo_entrada") + ")"
+                );
+            }
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
     }
 
     @FXML void cadastrar() {
