@@ -38,9 +38,10 @@
                         <ChoiceBox fx:id="tipoCliente" prefHeight="40.0" prefWidth="250.0">
                             <items>
                                 <FXCollections fx:factory="observableArrayList">
+                                    <String fx:value="VIP" />
                                     <String fx:value="Pista" />
                                     <String fx:value="Camarote" />
-                                    <String fx:value="VIP" />
+
                                 </FXCollections>
                             </items>
                         </ChoiceBox>

@@ -36,7 +36,7 @@ public class ClienteController extends GeneralController {
             nomeCliente.setText(dados.getString("nome"));
             tipoEntrada.setText(dados.getString("tipo_entrada"));
         } catch (SQLException e) {
-            System.out.println(e.getMessage());
+            alerta(e.getMessage());
         }
     }
     void mostraTabela(){
@@ -52,7 +52,7 @@ public class ClienteController extends GeneralController {
                 );
             }
         } catch (SQLException e) {
-            System.out.println(e.getMessage());
+            alerta(e.getMessage());
         }
 
     }
@@ -69,7 +69,7 @@ public class ClienteController extends GeneralController {
                 );
             }
         } catch (SQLException e) {
-            System.out.println(e.getMessage());
+            alerta(e.getMessage());
         }
     }
 
@@ -91,7 +91,7 @@ public class ClienteController extends GeneralController {
                 );
             }
         } catch (SQLException e) {
-            System.out.println(e.getMessage());
+            alerta(e.getMessage());
         }
     }
 
@@ -125,7 +125,7 @@ public class ClienteController extends GeneralController {
             );
             cancelar();
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+            alerta(e.getMessage());
         }
     }
 
@@ -148,7 +148,7 @@ public class ClienteController extends GeneralController {
         } catch (SQLException | IllegalArgumentException e) {
             nomeCliente.setText("RG inválido para esta operação");
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+            alerta(e.getMessage());
         }
     }
     @FXML void buscaRGHome(){
@@ -163,7 +163,7 @@ public class ClienteController extends GeneralController {
                 );
             }
         } catch (SQLException | IllegalArgumentException e) {
-            System.out.println(e.getMessage());
+            alerta(e.getMessage());
         }
     }
     @FXML void maskPreco(){

@@ -44,6 +44,7 @@ public class ConsumoController extends GeneralController {
                 );
         } catch (SQLException e) {
             e.printStackTrace();
+            alerta(e.getMessage());
         }
     }
 
@@ -98,7 +99,7 @@ public class ConsumoController extends GeneralController {
                 cancelar();
             }
         } catch (Exception e){
-            System.out.println(e.getMessage());
+            alerta(e.getMessage());
         }
     }
 
@@ -122,6 +123,7 @@ public class ConsumoController extends GeneralController {
             cancelar();
         } catch (SQLException e) {
             e.printStackTrace();
+            alerta(e.getMessage());
         }
     }
 
@@ -191,6 +193,7 @@ public class ConsumoController extends GeneralController {
         } catch (SQLException e) {
             totalFiltro.setText("");
             nomeClienteFiltro.setText("");
+            alerta(e.getMessage());
         }
     }
 }
