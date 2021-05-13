@@ -79,8 +79,8 @@ public class ClienteController extends GeneralController {
             ResultSet clientes;
             switch (tipoClienteFiltro.getSelectionModel().getSelectedItem()){
                 case "Pista": clientes = Pista.read(); break;
-                case "Camarote": clientes = Pista.read(); break;
-                case "VIP": clientes = Pista.read(); break;
+                case "Camarote": clientes = Camarote.read(); break;
+                case "VIP": clientes = Vip.read(); break;
                 default: clientes = Cliente.read(); break;
             }
             listClientes.getItems().clear();

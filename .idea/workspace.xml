@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1d3c235b-cb76-44cc-8da2-30ab46e97f32" name="Default Changelist" comment="Assim funfa?">
+    <list default="true" id="1d3c235b-cb76-44cc-8da2-30ab46e97f32" name="Default Changelist" comment="vibes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/TrabalhoFinalPOO/Controller/ClienteController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrabalhoFinalPOO/Controller/ClienteController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrabalhoFinalPOO/Controller/ConsumoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrabalhoFinalPOO/Controller/ConsumoController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrabalhoFinalPOO/Controller/ProdutoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrabalhoFinalPOO/Controller/ProdutoController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/TrabalhoFinalPOO/View/MenuClientes.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrabalhoFinalPOO/View/MenuClientes.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/ClienteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ClienteController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/MenuClientes.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/MenuClientes.fxml" afterDir="false" />
@@ -393,7 +391,21 @@
       <option name="project" value="LOCAL" />
       <updated>1620861061019</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="vibes">
+      <created>1620871322257</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1620871322257</updated>
+    </task>
+    <task id="LOCAL-00038" summary="vibes">
+      <created>1620871334505</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1620871334505</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -426,7 +438,6 @@
     <MESSAGE value="addProduto" />
     <MESSAGE value="keyPressed" />
     <MESSAGE value="mask" />
-    <MESSAGE value="vibes" />
     <MESSAGE value="tentativa na table" />
     <MESSAGE value="vibes and flowers" />
     <MESSAGE value="views update" />
@@ -438,6 +449,7 @@
     <MESSAGE value="update 8 and 13" />
     <MESSAGE value="Troca de Choice pra ComboBox" />
     <MESSAGE value="Assim funfa?" />
-    <option name="LAST_COMMIT_MESSAGE" value="Assim funfa?" />
+    <MESSAGE value="vibes" />
+    <option name="LAST_COMMIT_MESSAGE" value="vibes" />
   </component>
 </project>
