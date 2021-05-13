@@ -12,8 +12,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ClienteController extends GeneralController {
+    private ObservableList<String> categorias = FXCollections.observableArrayList("Todas as categorias", "Vip", "Camarote", "Pista");
     @FXML private TextField RG, RGHome, nomeCliente, valorCredito, tipoEntrada;
-    @FXML private ComboBox<String> tipoCliente;
+    @FXML private ComboBox<String> tipoCliente = new ComboBox<>(categorias);
     @FXML private ListView<String> listClientes;
     private static int idUpdate;
 
@@ -41,7 +42,6 @@ public class ClienteController extends GeneralController {
         }
     }
     void mostraTabela(){
-        carregarCategorias();
         if(listClientes == null) listClientes = new ListView<>();
         listClientes.getItems().clear();
         try {
@@ -58,8 +58,8 @@ public class ClienteController extends GeneralController {
         }
 
     }
+
     void mostraTabela(ResultSet dados){
-        carregarCategorias();
         if(listClientes == null) listClientes = new ListView<>();
         listClientes.getItems().clear();
         try {
@@ -73,16 +73,6 @@ public class ClienteController extends GeneralController {
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
-    }
-
-    void carregarCategorias(){
-        ObservableList<String> categorias = FXCollections.observableArrayList();
-        if(tipoCliente == null) tipoCliente = new ComboBox<>();
-        categorias.add("Todas as categorias");
-        categorias.add("Vip");
-        categorias.add("Camarote");
-        categorias.add("Pista");
-        tipoCliente.setItems(categorias);
     }
 
     @FXML void filtraCategoria(){
