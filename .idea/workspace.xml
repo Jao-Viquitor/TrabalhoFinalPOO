@@ -1,12 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1d3c235b-cb76-44cc-8da2-30ab46e97f32" name="Default Changelist" comment="vibes">
+    <list default="true" id="1d3c235b-cb76-44cc-8da2-30ab46e97f32" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/TrabalhoFinalPOO/Controller/ClienteController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrabalhoFinalPOO/Controller/ClienteController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrabalhoFinalPOO/Controller/ConsumoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrabalhoFinalPOO/Controller/ConsumoController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrabalhoFinalPOO/Controller/ProdutoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrabalhoFinalPOO/Controller/ProdutoController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TrabalhoFinalPOO/Controller/GeneralController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrabalhoFinalPOO/Controller/GeneralController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TrabalhoFinalPOO/View/AddCliente.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrabalhoFinalPOO/View/AddCliente.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TrabalhoFinalPOO/View/MenuClientes.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrabalhoFinalPOO/View/MenuClientes.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TrabalhoFinalPOO/View/Principal.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrabalhoFinalPOO/View/Principal.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/ClienteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ClienteController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/ConsumoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ConsumoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/GeneralController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/GeneralController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/PrincipalController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/PrincipalController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/AddCliente.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/AddCliente.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/Alerta.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/Estilo/DarkTheme.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/Estilo/DarkTheme.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/MenuClientes.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/MenuClientes.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/Principal.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/Principal.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,7 +101,7 @@
     <configuration name="MainController" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Controller.MainController" />
       <module name="TrabalhoFinalPOO" />
-      <option name="VM_PARAMETERS" value="--module-path /opt/javafx-sdk-16 --add-modules javafx.controls,javafx.fxml --add-exports javafx.graphics/com.sun.javafx.sg.prism=ALL-UNNAMED" />
+      <option name="VM_PARAMETERS" value="--module-path C:\Users\Multiverso\Desktop\openjfx-11.0.2_windows-x64_bin-sdk\javafx-sdk-11.0.2/lib --add-modules javafx.controls,javafx.fxml --add-exports javafx.graphics/com.sun.javafx.sg.prism=ALL-UNNAMED" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="Controller.*" />
@@ -415,7 +425,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620871519952</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="Aler">
+      <created>1620872418585</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1620872418585</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -435,7 +452,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="métodos para Consumo" />
     <MESSAGE value="review javadoc" />
     <MESSAGE value="produtos add" />
     <MESSAGE value="GeneralController" />
@@ -460,6 +476,7 @@
     <MESSAGE value="Troca de Choice pra ComboBox" />
     <MESSAGE value="Assim funfa?" />
     <MESSAGE value="vibes" />
-    <option name="LAST_COMMIT_MESSAGE" value="vibes" />
+    <MESSAGE value="Aler" />
+    <option name="LAST_COMMIT_MESSAGE" value="Aler" />
   </component>
 </project>

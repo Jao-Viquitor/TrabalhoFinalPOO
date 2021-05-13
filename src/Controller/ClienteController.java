@@ -50,6 +50,7 @@ public class ClienteController extends GeneralController {
                     clientes.getString("nome") + " - (" +
                     clientes.getString("tipo_entrada") + ")"
                 );
+                listClientes.refresh();
             }
         } catch (SQLException e) {
             alerta(e.getMessage());
@@ -112,11 +113,12 @@ public class ClienteController extends GeneralController {
         } catch (SQLException | IllegalArgumentException e) {
             System.out.println(e.getMessage());
         } catch (Exception e) {
-            System.out.println("Preencha o nome do cliente!");
+            alerta("Preencha os campos corretamente!");
         }
-        mostraTabela();
+        MainController.changeScreen("MenuClientes");
         cancelar();
     }
+
     @FXML void confirmarAddCredito() {
         try {
             CamarotePista.adicionarCredito(

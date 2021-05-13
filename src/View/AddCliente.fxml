@@ -35,7 +35,6 @@
                                     <String fx:value="VIP" />
                                     <String fx:value="Pista" />
                                     <String fx:value="Camarote" />
-
                                 </FXCollections>
                             </items>
                         </ChoiceBox>

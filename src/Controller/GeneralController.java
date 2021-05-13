@@ -3,6 +3,8 @@ package Controller;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.DialogPane;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
@@ -12,7 +14,6 @@ public class GeneralController {
     protected static Stage modal;
     protected static boolean modalScreen;
 
-    @FXML Label msgErro;
 
     @FXML
     void voltar(){
@@ -25,8 +26,11 @@ public class GeneralController {
     }
 
     @FXML void alerta(String alert){
-        msgErro.setText(alert);
-        openModal("Alerta.fxml");
+        Alert lerta = new Alert(Alert.AlertType.INFORMATION);
+        lerta.setTitle("Alerta!");
+        lerta.setHeaderText("Algo deu Errado");
+        lerta.setContentText(alert);
+        lerta.showAndWait();
     }
 
 

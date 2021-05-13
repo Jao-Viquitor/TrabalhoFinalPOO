@@ -25,7 +25,7 @@ public class PrincipalController extends GeneralController{
             custoFesta.setText("Custo: R$ " + analytics.getString("custo"));
             lucroFesta.setText("Lucro: R$ " + analytics.getString("lucro"));
         } catch (SQLException e){
-            System.out.println("woops");
+            alerta("Woops");
         }
 
     }
