@@ -25,12 +25,14 @@ public class GeneralController {
         modal = null;
     }
 
-    @FXML void alerta(String alert){
+    void alerta(String alert){
         Alert lerta = new Alert(Alert.AlertType.INFORMATION);
         lerta.setTitle("Alerta!");
-        lerta.setHeaderText("Algo deu Errado");
-        lerta.setContentText(alert);
+        lerta.setHeaderText(alert);
         lerta.showAndWait();
+    }
+    void alerta(){
+        alerta("Algo deu errado, confirme os dados e tente novamente");
     }
 
 

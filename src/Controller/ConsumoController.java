@@ -8,7 +8,6 @@ import javafx.scene.control.*;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
-import java.awt.*;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
@@ -31,6 +30,7 @@ public class ConsumoController extends GeneralController {
     }
 
     void mostraTabela(){
+        if(nomeClienteFiltro == null) nomeClienteFiltro = new Label();
         buscaRG.setText("");
         nomeClienteFiltro.setText("");
         if(listConsumo == null) listConsumo = new ListView<>();
@@ -69,6 +69,7 @@ public class ConsumoController extends GeneralController {
         try {
             buscaRG.setText(buscaRG.getText().replaceAll("[^0-9]", ""));
             buscaRG.positionCaret(buscaRG.getLength());
+
             nomeCliente.setText(
                 Cliente.read(
                     buscaRG.getText()
@@ -116,12 +117,14 @@ public class ConsumoController extends GeneralController {
 
     @FXML void confirmarPgConsumo(){
         try {
+            if(nomeCliente.getText().isEmpty()){
+                alerta("preencha os dados");
+            }
             String[] split = total.getText().split(" ");
             Consumo.pagarConsumo(buscaRG.getText(), Float.parseFloat(split[1]));
-            MainController.changeScreen("MenuConsumo");
             cancelar();
         } catch (SQLException e) {
-            e.printStackTrace();
+            alerta("Algo deu errado");
         }
     }
 
@@ -191,7 +194,6 @@ public class ConsumoController extends GeneralController {
         } catch (SQLException e) {
             totalFiltro.setText("");
             nomeClienteFiltro.setText("");
-            alerta(e.getMessage());
         }
     }
 }

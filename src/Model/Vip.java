@@ -20,7 +20,7 @@ public class Vip extends Cliente{
     public static ResultSet read(String orderBy) throws SQLException {
         return Conexao.read(
                 "cliente",
-                "`valor_entrada` = " + TipoCliente.VIP.getValorEntrada(),
+                "`tipo_entrada` = '" + TipoCliente.VIP + "'",
                 orderBy
         );
     }

@@ -21,7 +21,7 @@ public class Camarote extends CamarotePista {
     public static ResultSet read(String orderBy) throws SQLException {
         return Conexao.read(
             "cliente INNER JOIN `camarote_pista` ON cliente.rg = camarote_pista.rg",
-            "`valor_entrada` = " + TipoCliente.CAMAROTE.getValorEntrada(),
+            "`tipo_entrada` = '" + TipoCliente.CAMAROTE + "'",
             orderBy
         );
     }

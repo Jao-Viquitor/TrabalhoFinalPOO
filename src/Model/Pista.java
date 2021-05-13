@@ -21,9 +21,9 @@ public class Pista extends CamarotePista{
      */
     public static ResultSet read(String orderBy) throws SQLException {
         return Conexao.read(
-                "cliente INNER JOIN `camarote_pista` ON cliente.rg = camarote_pista.rg",
-                "`valor_entrada` = " + TipoCliente.PISTA.getValorEntrada(),
-                orderBy
+            "cliente INNER JOIN `camarote_pista` ON cliente.rg = camarote_pista.rg",
+            "`tipo_entrada` = '" + TipoCliente.PISTA + "'",
+            orderBy
         );
     }
     public static ResultSet read() throws SQLException {

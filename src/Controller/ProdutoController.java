@@ -41,7 +41,7 @@ public class ProdutoController extends GeneralController{
             precoCusto.setText(produto.getString("valor_custo"));
             precoVenda.setText(produto.getString("valor_venda"));
         } catch (SQLException e) {
-            alerta(e.getMessage());
+            alerta();
         }
     }
 
@@ -60,7 +60,7 @@ public class ProdutoController extends GeneralController{
                 );
             }
         } catch (SQLException e) {
-            alerta(e.getMessage());
+            alerta();
         }
     }
 
@@ -78,7 +78,7 @@ public class ProdutoController extends GeneralController{
                 Float.parseFloat(precoVenda.getText())
             );
         } catch (Exception e) {
-            alerta(e.getMessage());
+            alerta();
         }
         MainController.changeScreen("MenuProdutos");
         cancelar();
@@ -120,7 +120,7 @@ public class ProdutoController extends GeneralController{
             MainController.changeScreen("MenuProdutos");
             cancelar();
         } catch (SQLException e) {
-            alerta(e.getMessage());
+            alerta();
         }
     }
 }

@@ -2,13 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1d3c235b-cb76-44cc-8da2-30ab46e97f32" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/View/Estilo/Logo.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TrabalhoFinalPOO/Controller/ClienteController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrabalhoFinalPOO/Controller/ClienteController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TrabalhoFinalPOO/Controller/ConsumoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrabalhoFinalPOO/Controller/ConsumoController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/TrabalhoFinalPOO/Controller/GeneralController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrabalhoFinalPOO/Controller/GeneralController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrabalhoFinalPOO/Controller/PrincipalController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrabalhoFinalPOO/Controller/PrincipalController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrabalhoFinalPOO/View/Estilo/DarkTheme.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrabalhoFinalPOO/View/Estilo/DarkTheme.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrabalhoFinalPOO/View/Principal.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrabalhoFinalPOO/View/Principal.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/Principal.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/Principal.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TrabalhoFinalPOO/Controller/ProdutoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrabalhoFinalPOO/Controller/ProdutoController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TrabalhoFinalPOO/Model/Camarote.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrabalhoFinalPOO/Model/Camarote.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TrabalhoFinalPOO/Model/Pista.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrabalhoFinalPOO/Model/Pista.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TrabalhoFinalPOO/Model/Vip.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrabalhoFinalPOO/Model/Vip.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/ClienteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ClienteController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/ConsumoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ConsumoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/GeneralController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/GeneralController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/ProdutoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ProdutoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Camarote.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Camarote.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Pista.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Pista.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Vip.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Vip.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/ReadCliente.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/ReadCliente.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,9 +47,9 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/src/Controller/MainController.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/Model/CamarotePista.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/Model/Produto.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/Controller/MainController.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProblemsViewState">
     <hideBySeverity>
@@ -65,7 +74,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="full.screen.before.presentation.mode" value="false" />
     <property name="last_opened_file_path" value="$USER_HOME$/Desktop/openjfx-11.0.2_windows-x64_bin-sdk/javafx-sdk-11.0.2/lib" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.20837587" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
@@ -80,27 +89,29 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="MainController" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Controller.MainController" />
       <module name="TrabalhoFinalPOO" />
-      <option name="VM_PARAMETERS" value="--module-path C:\Users\Multiverso\Desktop\openjfx-11.0.2_windows-x64_bin-sdk\javafx-sdk-11.0.2/lib --add-modules javafx.controls,javafx.fxml --add-exports javafx.graphics/com.sun.javafx.sg.prism=ALL-UNNAMED" />
+      <option name="VM_PARAMETERS" value="--module-path /opt/javafx-sdk-16 --add-modules javafx.controls,javafx.fxml --add-exports javafx.graphics/com.sun.javafx.sg.prism=ALL-UNNAMED" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="Controller.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>

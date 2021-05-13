@@ -24,8 +24,10 @@ public class ClienteController extends GeneralController {
             }
         });
         if(modalScreen){
-            setReadCliente();
-            idUpdate = 0;
+            if(idUpdate > 0){
+                setReadCliente();
+                idUpdate = 0;
+            }
             modalScreen = false;
         }
     }
@@ -35,8 +37,20 @@ public class ClienteController extends GeneralController {
             RG.setText(dados.getString("rg"));
             nomeCliente.setText(dados.getString("nome"));
             tipoEntrada.setText(dados.getString("tipo_entrada"));
+            if(dados.getString("tipo_entrada").equals("VIP")){
+                valorCredito.setText("Crédito ilimitado");
+            } else {
+
+                valorCredito.setText(
+                    "R$ " +
+                    CamarotePista.read(
+                        dados.getString("rg")
+                    ).getString("credito")
+                );
+            }
+
         } catch (SQLException e) {
-            alerta(e.getMessage());
+            alerta();
         }
     }
     void mostraTabela(){
@@ -53,7 +67,7 @@ public class ClienteController extends GeneralController {
                 listClientes.refresh();
             }
         } catch (SQLException e) {
-            alerta(e.getMessage());
+            alerta();
         }
 
     }
@@ -70,7 +84,7 @@ public class ClienteController extends GeneralController {
                 );
             }
         } catch (SQLException e) {
-            alerta(e.getMessage());
+            alerta();
         }
     }
 
@@ -92,7 +106,7 @@ public class ClienteController extends GeneralController {
                 );
             }
         } catch (SQLException e) {
-            alerta(e.getMessage());
+            alerta();
         }
     }
 
@@ -113,7 +127,7 @@ public class ClienteController extends GeneralController {
         } catch (SQLException | IllegalArgumentException e) {
             System.out.println(e.getMessage());
         } catch (Exception e) {
-            alerta("Preencha os campos corretamente!");
+            alerta();
         }
         MainController.changeScreen("MenuClientes");
         cancelar();
@@ -121,13 +135,17 @@ public class ClienteController extends GeneralController {
 
     @FXML void confirmarAddCredito() {
         try {
+            if(nomeCliente.getText().equals("RG inválido para esta operação")){
+                alerta("Usuário não encontrado!");
+                return;
+            }
             CamarotePista.adicionarCredito(
                 Integer.parseInt(RG.getText()),
                 Float.parseFloat(valorCredito.getText())
             );
             cancelar();
         } catch (Exception e) {
-            alerta(e.getMessage());
+            alerta();
         }
     }
 
@@ -148,10 +166,12 @@ public class ClienteController extends GeneralController {
             );
 
         } catch (SQLException | IllegalArgumentException e) {
-            nomeCliente.setText("RG inválido para esta operação");
-        } catch (Exception e) {
-            alerta(e.getMessage());
-        }
+            if(RG.getText().isEmpty()){
+                nomeCliente.setText("");
+            }else {
+                nomeCliente.setText("RG inválido para esta operação");
+            }
+        } catch (Exception e) { /* Quando não houver dados o erro é suprimido */}
     }
     @FXML void buscaRGHome(){
         try {
@@ -165,7 +185,7 @@ public class ClienteController extends GeneralController {
                 );
             }
         } catch (SQLException | IllegalArgumentException e) {
-            alerta(e.getMessage());
+            alerta();
         }
     }
     @FXML void maskPreco(){
