@@ -25,7 +25,7 @@ public class ClienteController extends GeneralController {
         });
         if(modalScreen){
             setReadCliente();
-//            idUpdate = 0;
+            idUpdate = 0;
             modalScreen = false;
         }
     }
@@ -74,7 +74,6 @@ public class ClienteController extends GeneralController {
     }
 
     @FXML void filtraCategoria(){
-        System.out.println("teste");
         try {
             ResultSet clientes;
             switch (tipoClienteFiltro.getSelectionModel().getSelectedItem()){
