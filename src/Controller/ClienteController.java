@@ -12,14 +12,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ClienteController extends GeneralController {
-    private ObservableList<String> categorias = FXCollections.observableArrayList("Todas as categorias", "Vip", "Camarote", "Pista");
     @FXML private TextField RG, RGHome, nomeCliente, valorCredito, tipoEntrada;
-    @FXML private ComboBox<String> tipoCliente = new ComboBox<>(categorias);
+    @FXML private ChoiceBox<String> tipoCliente = new ChoiceBox<>();
     @FXML private ListView<String> listClientes;
     private static int idUpdate;
 
     @FXML
     void initialize(){
+        tipoCliente.getItems().addAll("Todas Categorias", "Vip", "Camarote", "Pista");
         MainController.setListener((newScreen, userData) -> {
             if (newScreen.equals("MenuClientes")){
                 mostraTabela();
@@ -85,7 +85,7 @@ public class ClienteController extends GeneralController {
 
     @FXML void confirmarCadastro() {
         try {
-            if(tipoCliente == null) tipoCliente = new ComboBox<>();
+            if(tipoCliente == null) tipoCliente = new ChoiceBox();
             String rg = RG.getText();
             String nome = nomeCliente.getText();
             switch (tipoCliente.getSelectionModel().getSelectedItem()){
