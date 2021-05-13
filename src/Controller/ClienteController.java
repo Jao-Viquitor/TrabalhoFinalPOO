@@ -83,6 +83,7 @@ public class ClienteController extends GeneralController {
                 case "VIP": clientes = Pista.read(); break;
                 default: clientes = Cliente.read(); break;
             }
+            listClientes.getItems().clear();
             while (clientes.next()){
                 listClientes.getItems().add(
                     clientes.getString("rg") + " - " +
