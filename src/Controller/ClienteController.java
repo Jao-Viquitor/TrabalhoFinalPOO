@@ -1,25 +1,23 @@
 package Controller;
 
 import Model.*;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
 
 public class ClienteController extends GeneralController {
     @FXML private TextField RG, RGHome, nomeCliente, valorCredito, tipoEntrada;
-    @FXML private ChoiceBox<String> tipoCliente = new ChoiceBox<>();
+    @FXML private ChoiceBox<String> tipoCliente;
+    @FXML private ComboBox<String> tipoClienteFiltro;
     @FXML private ListView<String> listClientes;
     private static int idUpdate;
 
     @FXML
     void initialize(){
-        tipoCliente.getItems().addAll("Todas Categorias", "Vip", "Camarote", "Pista");
+        if(tipoCliente == null) tipoCliente = new ChoiceBox<>();
+        if(tipoClienteFiltro == null) tipoClienteFiltro = new ComboBox<>();
         MainController.setListener((newScreen, userData) -> {
             if (newScreen.equals("MenuClientes")){
                 mostraTabela();
@@ -76,7 +74,25 @@ public class ClienteController extends GeneralController {
     }
 
     @FXML void filtraCategoria(){
-        String str = tipoCliente.getSelectionModel().getSelectedItem();
+        System.out.println("teste");
+        try {
+            ResultSet clientes;
+            switch (tipoClienteFiltro.getSelectionModel().getSelectedItem()){
+                case "Pista": clientes = Pista.read(); break;
+                case "Camarote": clientes = Pista.read(); break;
+                case "VIP": clientes = Pista.read(); break;
+                default: clientes = Cliente.read(); break;
+            }
+            while (clientes.next()){
+                listClientes.getItems().add(
+                    clientes.getString("rg") + " - " +
+                    clientes.getString("nome") + " - (" +
+                    clientes.getString("tipo_entrada") + ")"
+                );
+            }
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
     }
 
     @FXML void cadastrar() {
@@ -85,7 +101,7 @@ public class ClienteController extends GeneralController {
 
     @FXML void confirmarCadastro() {
         try {
-            if(tipoCliente == null) tipoCliente = new ChoiceBox();
+            if(tipoCliente == null) tipoCliente = new ChoiceBox<>();
             String rg = RG.getText();
             String nome = nomeCliente.getText();
             switch (tipoCliente.getSelectionModel().getSelectedItem()){
