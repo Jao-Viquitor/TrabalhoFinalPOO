@@ -2,6 +2,8 @@
   <library name="javafx16">
     <CLASSES>
       <root url="file://$PROJECT_DIR$/lib/javafx16" />
+      <root url="file://$PROJECT_DIR$/lib" />
+      <root url="file://$USER_HOME$/Desktop/openjfx-11.0.2_windows-x64_bin-sdk/javafx-sdk-11.0.2/lib" />
     </CLASSES>
     <JAVADOC />
     <NATIVE>
@@ -9,8 +11,12 @@
     </NATIVE>
     <SOURCES>
       <root url="file://$PROJECT_DIR$/lib/javafx16" />
+      <root url="file://$USER_HOME$/Desktop/openjfx-11.0.2_windows-x64_bin-sdk/javafx-sdk-11.0.2/lib" />
     </SOURCES>
+    <jarDirectory url="file://$USER_HOME$/Desktop/openjfx-11.0.2_windows-x64_bin-sdk/javafx-sdk-11.0.2/lib" recursive="false" />
+    <jarDirectory url="file://$PROJECT_DIR$/lib" recursive="false" />
     <jarDirectory url="file://$PROJECT_DIR$/lib/javafx16" recursive="false" />
+    <jarDirectory url="file://$USER_HOME$/Desktop/openjfx-11.0.2_windows-x64_bin-sdk/javafx-sdk-11.0.2/lib" recursive="false" type="SOURCES" />
     <jarDirectory url="file://$PROJECT_DIR$/lib/javafx16" recursive="false" type="SOURCES" />
   </library>
 </component>
