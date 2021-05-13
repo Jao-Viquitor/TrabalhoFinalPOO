@@ -2,20 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1d3c235b-cb76-44cc-8da2-30ab46e97f32" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/View/Estilo/Logo.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrabalhoFinalPOO/Controller/ClienteController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrabalhoFinalPOO/Controller/ClienteController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/TrabalhoFinalPOO/Controller/GeneralController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrabalhoFinalPOO/Controller/GeneralController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrabalhoFinalPOO/View/AddCliente.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrabalhoFinalPOO/View/AddCliente.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TrabalhoFinalPOO/View/MenuClientes.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrabalhoFinalPOO/View/MenuClientes.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TrabalhoFinalPOO/Controller/PrincipalController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrabalhoFinalPOO/Controller/PrincipalController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TrabalhoFinalPOO/View/Estilo/DarkTheme.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrabalhoFinalPOO/View/Estilo/DarkTheme.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/TrabalhoFinalPOO/View/Principal.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrabalhoFinalPOO/View/Principal.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/ClienteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ClienteController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/ConsumoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ConsumoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/GeneralController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/GeneralController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/PrincipalController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/PrincipalController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/AddCliente.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/AddCliente.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/Alerta.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/Estilo/DarkTheme.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/Estilo/DarkTheme.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/MenuClientes.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/MenuClientes.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/Principal.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/Principal.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -83,6 +75,7 @@
       <recent name="$PROJECT_DIR$/src/View" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Multiverso\IdeaProjects\EsseTroçoAqui\src\View\Estilo" />
       <recent name="$PROJECT_DIR$/src/View" />
     </key>
   </component>
@@ -432,7 +425,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620872418585</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="Aler">
+      <created>1620881157646</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1620881157646</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -9,15 +9,18 @@
     <children>
         <VBox alignment="TOP_CENTER" prefHeight="600.0" prefWidth="800.0" styleClass="background">
             <children>
-                <ImageView fitHeight="175.0" fitWidth="660.0" pickOnBounds="true" preserveRatio="true">
+                <ImageView fitHeight="254.0" fitWidth="477.0" pickOnBounds="true" preserveRatio="true">
                     <VBox.margin>
                         <Insets bottom="25.0" top="25.0" />
-                    </VBox.margin></ImageView>
+                    </VBox.margin>
+               <image>
+                  <Image url="@Estilo/Logo.png" />
+               </image></ImageView>
                 <VBox prefHeight="350.0" prefWidth="800.0">
                     <children>
                         <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="94.0" prefWidth="118.0" text="Análise da festa">
                             <VBox.margin>
-                                <Insets left="50.0" />
+                                <Insets left="50.0" top="25.0" />
                             </VBox.margin>
                   </Label>
                         <HBox prefHeight="285.0" prefWidth="800.0">
@@ -49,12 +52,15 @@
                               </Button>
                               <Button fx:id="menuProduto1" mnemonicParsing="false" onAction="#gerenciarProdutos" prefHeight="25" prefWidth="125.0" text="Produtos" />
                            </children>
+                           <HBox.margin>
+                              <Insets bottom="25.0" />
+                           </HBox.margin>
                         </VBox>
                             </children>
                         </HBox>
                         <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="775.0">
                             <VBox.margin>
-                                <Insets left="25.0" />
+                                <Insets bottom="25.0" left="25.0" />
                             </VBox.margin>
                             <Button fx:id="credito" mnemonicParsing="false" onAction="#adicionarCredito" text="Adicionar Créditos" />
                             <Button fx:id="cConsumo" mnemonicParsing="false" onAction="#consultarConsumo" text="Consultar Consumo">
@@ -75,7 +81,7 @@
                         </HBox>
                     </children>
                     <VBox.margin>
-                        <Insets />
+                        <Insets top="10.0" />
                     </VBox.margin>
                 </VBox>
             </children>
