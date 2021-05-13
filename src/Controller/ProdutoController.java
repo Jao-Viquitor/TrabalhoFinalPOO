@@ -80,7 +80,7 @@ public class ProdutoController extends GeneralController{
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
-        mostraTabela();
+        MainController.changeScreen("MenuProdutos");
         cancelar();
     }
 
@@ -117,6 +117,7 @@ public class ProdutoController extends GeneralController{
     @FXML void alterarQuantidade(){
         try {
             Produto.aumentaEstoque(idProdutoRead, Integer.parseInt(quantidade.getText()));
+            MainController.changeScreen("MenuProdutos");
             cancelar();
         } catch (SQLException e) {
             System.out.println(e.getMessage());

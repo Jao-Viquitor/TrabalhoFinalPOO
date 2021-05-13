@@ -94,6 +94,7 @@ public class ConsumoController extends GeneralController {
                 quantidade.setText("");
                 valor.setText("");
             }else {
+                MainController.changeScreen();
                 cancelar();
             }
         } catch (Exception e){
@@ -117,6 +118,7 @@ public class ConsumoController extends GeneralController {
         try {
             String[] split = total.getText().split(" ");
             Consumo.pagarConsumo(buscaRG.getText(), Float.parseFloat(split[1]));
+            MainController.changeScreen("MenuConsumo");
             cancelar();
         } catch (SQLException e) {
             e.printStackTrace();
